@@ -2,8 +2,9 @@
 
 Hex on matemaatikko Piet Heinin kehittämä strateginen lautapeli, jota pelataan tavallisesti 11x11 kokoisella, kuusikulmioista muodostuvalla pelilaudalla. Pelaajat lisäävät laudalle vuorotellen omalla värillä merkittyjä  kuusikulmioita ja pyrkivät yhdistämään laudan vastakkaiset reunat kuusikulmioillaan. 
 
-Lisätietoja http://en.wikipedia.org/wiki/Hex_%28board_game%29
+Lisätietoja pelistä http://en.wikipedia.org/wiki/Hex_%28board_game%29
 
+Tässä työssä toteutetaan yksinkertainen 11x11 laudalla pelattava kahden pelaajan Hex mahdollisine laajennuksineen (kts. alla).
 ##Pelaajat
 
 Peliin osallistuu kaksi pelaajaa.
