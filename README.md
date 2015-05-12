@@ -1,2 +1,2 @@
 # Hex
-Game of Hex java application.
+Game of Hex java application (in Finnish).
