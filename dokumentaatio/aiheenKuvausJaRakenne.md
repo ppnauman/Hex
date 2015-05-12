@@ -1,6 +1,6 @@
 # Hex -peli
 
-Hex on matemaatikko Piet Heinin kehittämä kahden pelaajan strateginen lautapeli, jota pelataan kuusikulmioista muodostuvalla pelilaudalla. Kumpikin pelaaja lisää vuorollaan pelilaudalle pelaajan värillä merkityn kuusikulmion. Pelin voittaja on pelaaja, joka ensimmäisenä yhdistää pelilaudan vastakkaiset sivut kuusikulmioidensa välityksellä  toisiinsa.  
+Hex on Piet Heinin ja John Nashin kehittämä kahden pelaajan strateginen lautapeli, jota pelataan kuusikulmioista muodostuvalla pelilaudalla. Kumpikin pelaaja lisää vuorollaan pelilaudalle pelaajan värillä merkityn kuusikulmion. Pelin voittaja on pelaaja, joka ensimmäisenä yhdistää pelilaudan vastakkaiset sivut kuusikulmioidensa välityksellä  toisiinsa.  
 
 Lisätietoja pelistä http://en.wikipedia.org/wiki/Hex_%28board_game%29
 
