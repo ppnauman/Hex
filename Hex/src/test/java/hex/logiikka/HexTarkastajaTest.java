@@ -135,5 +135,31 @@ public class HexTarkastajaTest {
         t.yhdistaKetjut( 133, 120 );
         assertEquals( 3, t.ketjunKoko( 133 ) );
     }
+    
+    
+    
+    
+    @Test
+    public void voittajanTarkistusTesti_1() {
+        assertEquals(0, t.voittajanTarkistus());
+    }
+    
+    
+    
+    @Test
+    public void voittajanTarkistusTesti_2() {
+        for ( int i = 104; i<116; i++ ) t.yhdistaKetjut(i, i+1);
+        assertEquals(1, t.voittajanTarkistus());
+    }
+    
+    
+    
+    @Test
+    public void voittajanTarkistusTesti_3() {
+        for(int i=2; i<= 145; i+= 13) {
+            t.yhdistaKetjut(i, i+13);
+        }
+        assertEquals(2, t.voittajanTarkistus());
+    }
   
 }
