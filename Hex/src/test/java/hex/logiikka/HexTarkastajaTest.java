@@ -127,5 +127,4 @@ public class HexTarkastajaTest {
         }
         assertEquals(2, t.voittajanTarkistus());
     }
-
 }
