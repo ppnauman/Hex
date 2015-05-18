@@ -116,14 +116,14 @@ public class HexTarkastaja {
      * @return union-find -ketjujen koot
      */
     public String ketjujenKoot() {
-        String koot = "";
+        StringBuilder koot = new StringBuilder();
         for (int i = 0; i < this.ketjujenKoot.length; i++) {
-            koot += String.format("%4d", this.ketjujenKoot[i]);
+            koot.append(String.format("%4d", this.ketjujenKoot[i]));
             if (i % (this.laudanKoko + 2) == laudanKoko + 1) {
-                koot += "\n";
+                koot.append("\n");
             }
         }
-        return koot;
+        return koot.toString();
     }
 
     /**
@@ -134,13 +134,13 @@ public class HexTarkastaja {
      */
     @Override
     public String toString() {
-        String str = "";
+        StringBuilder str = new StringBuilder();
         for (int i = 0; i < this.ketjut.length; i++) {
-            str += String.format("%4d", this.ketjut[i]);
+            str.append(String.format("%4d", this.ketjut[i]));
             if (i % (this.laudanKoko + 2) == laudanKoko + 1) {
-                str += "\n";
+                str.append("\n");
             }
         }
-        return str;
+        return str.toString();
     }
 }
