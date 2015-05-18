@@ -1,10 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 package hex.logiikka;
+
+import java.awt.Graphics;
 
 /**
  *
@@ -21,7 +18,16 @@ public class Hex {
         
         String s = t.ketjujenKoot();
         System.out.println(s);
-       
+        
+        //testituloste monikulmiolle
+        int [] x = {10,10,15,20,20,15,};
+        int [] y = {100,110,115,110,100,95,};
+        Kuusikulmio k = new Kuusikulmio(x,y);
+        System.out.println(k.haeVari());
+        k.tummennaVaria();
+        System.out.println(k.haeVari());
+        
+        
     }
 }
     

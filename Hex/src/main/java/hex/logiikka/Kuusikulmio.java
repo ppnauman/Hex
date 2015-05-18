@@ -1,33 +1,34 @@
-
 package hex.logiikka;
 
-import java.awt.Color;
 import java.awt.Graphics;
 
 /**
- *Luokka kuvaa pelilaudan kuusikulmiota. 
+ * Pelilaudan Kuusikulmion kuvaava aliluokka.
+ *
  */
-public class Kuusikulmio {
-    
-    private int[] x;
-    private int[] y;
-    private Color vari;
-    
-    
-    public Kuusikulmio () {
-        
+public class Kuusikulmio extends Monikulmio {
+
+    /**
+     * Konstruktori luo uuden harmaan Kuusikulmion, jonka sijainti on ilmaistu
+     * x- ja y-koordinaatteina.
+     *
+     * @param xKoord x-koordinaattien taulukko
+     * @param yKoord y-koordinaattien taulukko
+     */
+    public Kuusikulmio(int[] xKoord, int[] yKoord) {
+        super(xKoord, yKoord);
     }
-    
-    public void asetaVari() {
-        
+
+    /**
+     * Korvaa yliluokan samannimisen abstraktin metodin ja piirtää täytetyn
+     * Kuusikulmion parametrina annettussa grafiikkakontekstissa.
+     *
+     * @param graphics
+     */
+    @Override
+    public void piirra(Graphics graphics) {
+        graphics.setColor(super.haeVari());
+        graphics.fillPolygon(super.haeXt(), super.haeYt(), 6);
     }
-    
-    public void haeVari() {
-        
-    }
-    
-    public void piirra () {
-        
-    }
-    
+
 }
