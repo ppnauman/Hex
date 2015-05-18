@@ -8,6 +8,8 @@ import java.awt.Graphics;
  */
 public class Kuusikulmio extends Monikulmio {
 
+    
+    
     /**
      * Konstruktori luo uuden harmaan Kuusikulmion, jonka kulmien
      * sijainnit grafiikkakontekstissa on ilmaistu x- ja y-koordinaatteina.
@@ -16,8 +18,12 @@ public class Kuusikulmio extends Monikulmio {
      * @param yKoord y-koordinaattien taulukko
      */
     public Kuusikulmio(int[] xKoord, int[] yKoord) {
+        
         super(xKoord, yKoord);
+        
     }
+    
+    
 
     /**
      * Korvaa yliluokan samannimisen abstraktin metodin ja piirtää täytetyn
