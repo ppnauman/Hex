@@ -12,10 +12,10 @@ public class HexTarkastaja {
 
     /**
      * Konstruktori asettaa pelilaudan kunkin kuusikulmion omaan
-     * ketjuunsa, joiden koko on yksi. Näkyvää pelilautaa reunustavat
-     * 'apukuusikulmiot', jotka asetetaan siten, että
-     * kullakin laudan sivustalla olevat apukuusikulmiot kuuluvat omaan ketjuunsa.
-     * Pelilaudan kulmissa sijaitsevat apukuusikulmiot asetetaan
+     * ketjuunsa, joiden koko on yksi. Lisäksi pelilautaa reunustavat
+     * 'apuviisikulmiot', jotka asetetaan siten, että
+     * kullakin laudan sivustalla olevat viisikulmiot kuuluvat omaan ketjuunsa.
+     * Pelilaudan kulmissa sijaitsevat viisikulmiot asetetaan
      * vasemman/oikean laidan ketjuihin.
      */
     public HexTarkastaja(int laudanKoko) {
@@ -50,27 +50,27 @@ public class HexTarkastaja {
     /**
      * Tutkii mihin ketjuun tietty pelilaudan kuusikulmio kuuluu.
      *
-     * @param kuusikulmio kuusikulmion paikka pelilaudalla
-     * @return ketju, johon parametrina annettu kuusikulmio kuuluu
+     * @param monikulmio Monikulmion paikka pelilaudalla.
+     * @return ketju, johon parametrina annettu monikulmio kuuluu
      */
-    public int loydaKetju(int kuusikulmio) {
+    public int loydaKetju(int monikulmio) {
 
-        while (this.ketjut[kuusikulmio] != kuusikulmio) {
-            kuusikulmio = this.ketjut[kuusikulmio];
+        while (this.ketjut[monikulmio] != monikulmio) {
+            monikulmio = this.ketjut[monikulmio];
         }
-        return this.ketjut[kuusikulmio];
+        return this.ketjut[monikulmio];
     }
 
     /**
-     * Yhdistää toisiinsa ketjut, joihin parametreina annettavat pelilaudan
-     * kuusikulmiot kuuluvat.
+     * Yhdistää toisiinsa ne union-find rakenteen ketjut, joihin parametreina
+     * annettavat pelilaudan monikulmiot kuuluvat.
      *
-     * @param kuusikulmio1
-     * @param kuusikulmio2
+     * @param monikulmio1
+     * @param monikulmio2
      */
-    public void yhdistaKetjut(int kuusikulmio1, int kuusikulmio2) {
-        int ketju1 = loydaKetju(kuusikulmio1);
-        int ketju2 = loydaKetju(kuusikulmio2);
+    public void yhdistaKetjut(int monikulmio1, int monikulmio2) {
+        int ketju1 = loydaKetju(monikulmio1);
+        int ketju2 = loydaKetju(monikulmio2);
 
         if (ketju1 != ketju2) {
             if (this.ketjujenKoot[ketju1] > this.ketjujenKoot[ketju2]) {
@@ -85,7 +85,7 @@ public class HexTarkastaja {
 
     /**
      * Tarkistaa onko peli ratkennut eli kuuluvatko ylemman ja alemman tai
-     * oikean ja vasemman reunustan apukuusikulmiot samaan ketjuun. Jos pelaaja1 on
+     * oikean ja vasemman reunustan viisikulmiot samaan ketjuun. Jos pelaaja1 on
      * voittanut, paluuarvo on 1. Jos pelaaja2 on voittanut, paluuarvo on 2. Jos
      * peli ei ole vielä ratkennut, on paluuarvo 0.
      *
@@ -105,12 +105,13 @@ public class HexTarkastaja {
         return this.laudanKoko;
     }
 
-    public int ketjunKoko(int kuusikulmio) {
-        return this.ketjujenKoot[kuusikulmio];
+    public int ketjunKoko(int monikulmio) {
+        return this.ketjujenKoot[monikulmio];
     }
 
     /**
-     * Palauttaa ketjujen tämänhetkiset koot 2D -merkkijonoesityksenä.
+     * Palauttaa pelilaudalla olevien ketjujen tämänhetkiset koot testauksen
+     * kannalta havainnollisena 2D -merkkijonoesityksenä.
      *
      * @return union-find -ketjujen koot
      */
@@ -126,8 +127,8 @@ public class HexTarkastaja {
     }
 
     /**
-     * Palauttaa 2D -merkkijonoesityksen siitä, mihin ketjuun kukin pelilaudan
-     * kuusikulmio kuuluu.
+     * Palauttaa testauksen kannalta havainnollisen 2D -merkkijonoesityksen siitä,
+     * mihin ketjuun kukin pelilaudan monikulmio kuuluu.
      *
      * @return union find -ketjut
      */
