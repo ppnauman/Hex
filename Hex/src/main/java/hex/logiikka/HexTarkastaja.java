@@ -112,7 +112,7 @@ public class HexTarkastaja {
     /**
      * Palauttaa pelilaudalla olevien ketjujen tämänhetkiset koot testauksen
      * kannalta havainnollisena 2D -merkkijonoesityksenä.
-     *
+     *git commai
      * @return union-find -ketjujen koot
      */
     public String ketjujenKoot() {

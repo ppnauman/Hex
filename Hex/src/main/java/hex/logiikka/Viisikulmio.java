@@ -5,18 +5,19 @@ import java.awt.Color;
 import java.awt.Graphics;
 
 /**
- *Kuvaa pelilaudan reunalla sijaitsevan Viisikulmion.
+ * Aliluokka kuvaa pelilaudan Viisikulmion. Viisikulmiot reunustavat pelilaudalla 
+ * Kuusikulmaisia 'peliruutuja'.
  * 
  */
 public class Viisikulmio extends Monikulmio {
     
     
     /**
-     * Luo uuden värillisen viisikulmion jonka paikka on ilmaistu
-     * x- ja y-koordinaatteina.
+     * Luo uuden värillisen viisikulmion jonka paikka grafiikkakontekstissa
+     * on ilmaistu x- ja y-koordinaatteina.
      * 
-     * @param xKoord - x-koordinaatit
-     * @param yKoord - y-koordinaatit
+     * @param xKoord - X-koordinaattien taulukko
+     * @param yKoord - Y-koordinaattien taulukko
      * @param vari viisikulmion väri
      */
     public Viisikulmio(int[] xKoord, int[] yKoord, Color vari) {
@@ -28,7 +29,7 @@ public class Viisikulmio extends Monikulmio {
      * Korvaa yliluokan abstraktin metodin ja piirtää täytetyn Viisikulmion
      * parametrina annetussa grafiikkakontekstissa.
      * 
-     * @param graphics grafiikkakonteksti
+     * @param graphics - grafiikkakonteksti
      */
     @Override
     public void piirra(Graphics graphics) {
