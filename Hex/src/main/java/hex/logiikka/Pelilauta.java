@@ -51,14 +51,30 @@ public class Pelilauta {
     //Kuusikulmion generoiva metodi
     private void luoKuusikulmio(int i, int j) {
         int [] x = new int[6];
+        laskeXkoord_6(i,j,x);
         int [] y = new int[6];
-        //alustavaa säätöä..
-        for(int kulma = 0; kulma < 6; kulma++){
-            x[kulma] = 
-        }
-        
-        
+        laskeYkoord_6(i,j,x);
         this.pelilauta[i][j] = new Kuusikulmio(x, y);
+    }
+    
+    
+    //6.k:n x-koordinaatit laskeva apumetodi
+    private void laskeXkoord_6(int i, int j, int[] x) {
+        int rako = 3;
+        int leveys = (int)(Math.sqrt(3.0)*30.0);
+        int puoliLeveys = (int)((Math.sqrt(3.0)*30.0)/2.0);
+        x[0] = x[1] = j*(leveys+rako) + i*(puoliLeveys+rako) ;
+        x[2] = x[0] + puoliLeveys;
+        x[3] = x[4] = x[0] + leveys;
+        x[5] = x[2];  
+    }
+    
+    
+    private void laskeYkoord_6(int i, int j, int[] x) {
+        int rako = 3;
+        int korkeus = 60;
+        int rivinKorkeus = 3/4*korkeus;
+        y[0] = y[4];
     }
     
     

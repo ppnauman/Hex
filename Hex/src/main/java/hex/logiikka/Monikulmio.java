@@ -7,8 +7,7 @@ import java.awt.Graphics;
  * Yliluokka kuvaa pelilaudan monikulmiota.
  */
 public abstract class Monikulmio {
-
-    
+    private int paikka;
     private int[] x;
     private int[] y;
     private Color vari;
@@ -20,9 +19,10 @@ public abstract class Monikulmio {
      * @param xKoord - x-koordinaatit
      * @param yKoord - y-koordinaatit
      */
-    public Monikulmio(int[] xKoord, int[] yKoord) {
+    public Monikulmio(int paikka, int[] xKoord, int[] yKoord) {
         this.x = xKoord;
         this.y = yKoord;
+        this.paikka = paikka;
         this.vari = Color.GRAY;
     }
 
@@ -59,7 +59,12 @@ public abstract class Monikulmio {
         return this.y;
     }
     
+    public int haePaikka() {
+        return this.paikka;
+    }
+    
 
+    
     /**
      * Abstrakti metodi, jonka tehtävä on piirtää Monikulmio näytölle
      * parametrina annetussa grafiikkakontekstissa.
