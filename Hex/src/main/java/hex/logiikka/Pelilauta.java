@@ -69,12 +69,13 @@ public class Pelilauta {
         x[5] = x[2];  
     }
     
-    
-    private void laskeYkoord_6(int i, int j, int[] x) {
+    //6.k:n y-koordinaatit laskeva apumetodi
+    private void laskeYkoord_6(int i, int j, int[] y) {
         int rako = 3;
         int korkeus = 60;
         int rivinKorkeus = 3/4*korkeus;
-        y[0] = y[4];
+        y[0] = y[4] = i*(45+3);
+        
     }
     
     
