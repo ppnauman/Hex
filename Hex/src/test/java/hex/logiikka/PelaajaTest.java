@@ -1,10 +1,8 @@
 package hex.logiikka;
 
-import hex.logiikka.Pelaaja;
+import java.awt.Color;
 import org.junit.After;
-import org.junit.AfterClass;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -17,7 +15,7 @@ public class PelaajaTest {
 
     @Before
     public void setUp() {
-        pelaaja = new Pelaaja("Matti", "keltainen");
+        pelaaja = new Pelaaja("Matti", Color.RED);
     }
 
     @After
@@ -33,6 +31,6 @@ public class PelaajaTest {
     @Test
     public void haeVariTesti() {
 
-        assertEquals("keltainen", pelaaja.haeVari());
+        assertEquals(Color.RED, pelaaja.haeVari());
     }
 }

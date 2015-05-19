@@ -8,6 +8,7 @@ import java.awt.Graphics;
  */
 public abstract class Monikulmio {
 
+    
     private int[] x;
     private int[] y;
     private Color vari;

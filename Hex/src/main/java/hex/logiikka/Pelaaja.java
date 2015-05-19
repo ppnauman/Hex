@@ -1,12 +1,14 @@
 package hex.logiikka;
 
+import java.awt.Color;
+
 /**
  * Pelin pelaajan kuvaava luokka.
  */
 public class Pelaaja {
 
     private String nimi;
-    private String vari;
+    private Color vari;
 
     /**
      * Konstruktori luo uuden pelaajan ja asettaa tälle nimen ja värin.
@@ -14,7 +16,7 @@ public class Pelaaja {
      * @param nimi Pelaajan nimi
      * @param vari Pelaajan väri
      */
-    public Pelaaja(String nimi, String vari) {
+    public Pelaaja(String nimi, Color vari) {
         this.nimi = nimi;
         this.vari = vari;
     }
@@ -33,7 +35,7 @@ public class Pelaaja {
      *
      * @return pelaajan väri
      */
-    public String haeVari() {
+    public Color haeVari() {
 
         return this.vari;
     }

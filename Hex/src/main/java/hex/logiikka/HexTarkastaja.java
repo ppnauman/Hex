@@ -138,7 +138,7 @@ public class HexTarkastaja {
         for (int i = 0; i < this.ketjut.length; i++) {
             str.append(String.format("%4d", this.ketjut[i]));
             if (i % (this.laudanKoko + 2) == laudanKoko + 1) {
-                str.append("\n");
+                str.append('\n');
             }
         }
         return str.toString();
