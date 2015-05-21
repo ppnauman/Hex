@@ -13,7 +13,7 @@ public abstract class Monikulmio {
     private Color vari;
 
     /**
-     * Luo uuden Monikulmion, jonka kulmien paikkakoordinaatit annetaan
+     * Luo uuden harmaan Monikulmion, jonka kulmien paikkakoordinaatit annetaan
      * konstruktorin parametreina.
      *
      * @param xKoord - x-koordinaatit

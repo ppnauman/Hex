@@ -22,8 +22,5 @@ public class Kuusikulmio extends Monikulmio {
         super(paikka, xKoord, yKoord);
         
     }
-    
-    
-
 
 }
