@@ -17,9 +17,9 @@ public class Kuusikulmio extends Monikulmio {
      * @param xKoord x-koordinaattien taulukko
      * @param yKoord y-koordinaattien taulukko
      */
-    public Kuusikulmio(int[] xKoord, int[] yKoord) {
+    public Kuusikulmio(int paikka, int[] xKoord, int[] yKoord) {
         
-        super(xKoord, yKoord);
+        super(paikka, xKoord, yKoord);
         
     }
     

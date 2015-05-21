@@ -20,8 +20,8 @@ public class Viisikulmio extends Monikulmio {
      * @param yKoord - Y-koordinaattien taulukko
      * @param vari viisikulmion väri
      */
-    public Viisikulmio(int[] xKoord, int[] yKoord, Color vari) {
-        super(xKoord, yKoord);
+    public Viisikulmio(int paikka, int[] xKoord, int[] yKoord, Color vari) {
+        super(paikka, xKoord, yKoord);
         super.asetaVari(vari);
     }
     

@@ -53,8 +53,8 @@ public class Pelilauta {
         int [] x = new int[6];
         laskeXkoord_6(i,j,x);
         int [] y = new int[6];
-        laskeYkoord_6(i,j,x);
-        this.pelilauta[i][j] = new Kuusikulmio(x, y);
+        laskeYkoord_6(i,j,y);
+        this.pelilauta[i][j] = new Kuusikulmio((pelilauta.length*i+j), x, y);
     }
     
     
@@ -74,17 +74,25 @@ public class Pelilauta {
         int rako = 3;
         int korkeus = 60;
         int rivinKorkeus = 3/4*korkeus;
-        y[0] = y[4] = i*(45+3);
-        
+        y[0] = y[4] = 30+rako + i*(45+rako);
+        y[1] = y[3] = y[0] -30;
+        y[2] = y[1] -15;
+        y[5] = y[4]+15;
     }
     
     
     //Viisikulmion generoiva metodi
     private void luoViisikulmio(int i, int j, Color vari) {
-        this.pelilauta[i][j] = new Viisikulmio();
+       
     }
     
-   
+    /**
+     * Palauttaa pelilaudan Monikulmion.
+     * 
+     */
+    public Monikulmio haeRuutu(int i, int j) {
+        return this.pelilauta[i][j];
+    }
     
     /**
      * Piirtää pelilaudan monikulmiot parametrina annetussa grafiikkakontekstissa.
@@ -94,7 +102,10 @@ public class Pelilauta {
     public void piirraLauta(Graphics graphics) {
         for(int i=0; i < pelilauta.length; i++) {
             for(int j=0; j<pelilauta[0].length; j++) {
-                pelilauta[i][j].piirra(graphics);
+                if(pelilauta[i][j]!= null) {
+                    pelilauta[i][j].piirra(graphics);
+                }
+                
             }
         }
     }

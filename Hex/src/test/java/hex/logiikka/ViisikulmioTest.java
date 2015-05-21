@@ -16,7 +16,7 @@ public class ViisikulmioTest {
     public void setUp() {
         int[] x = {10, 10, 15, 20, 20,};
         int[] y = {100, 110, 115, 110, 100,};
-        v = new Viisikulmio(x, y, Color.BLUE);
+        v = new Viisikulmio(1,x, y, Color.BLUE);
     }
 
     @Test

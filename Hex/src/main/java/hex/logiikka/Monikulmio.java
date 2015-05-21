@@ -23,7 +23,7 @@ public abstract class Monikulmio {
         this.x = xKoord;
         this.y = yKoord;
         this.paikka = paikka;
-        this.vari = Color.GRAY;
+        this.vari = Color.LIGHT_GRAY;
     }
 
     /**

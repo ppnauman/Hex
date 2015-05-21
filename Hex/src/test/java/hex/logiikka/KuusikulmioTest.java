@@ -26,7 +26,7 @@ public class KuusikulmioTest {
     public void setUp() {
         int[] x = {10,10,15,20,20,15,};
         int[] y = {100,110,115,110,100,95,};
-        k = new Kuusikulmio( x, y);
+        k = new Kuusikulmio(55, x, y);
     }
 
     
