@@ -25,16 +25,5 @@ public class Kuusikulmio extends Monikulmio {
     
     
 
-    /**
-     * Korvaa yliluokan samannimisen abstraktin metodin ja piirtää täytetyn
-     * Kuusikulmion parametrina annettussa grafiikkakontekstissa.
-     *
-     * @param graphics
-     */
-    @Override
-    public void piirra(Graphics graphics) {
-        graphics.setColor(super.haeVari());
-        graphics.fillPolygon(super.haeXt(), super.haeYt(), 6);
-    }
 
 }

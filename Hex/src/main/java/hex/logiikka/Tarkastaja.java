@@ -4,7 +4,7 @@ package hex.logiikka;
  * Luokka tarkkailee pelin ratkeamista eli laudan reunalta toiselle ulottuvan
  * 6-kulmioiden ketjun muodostumista union-find rakenteen avulla.
  */
-public class HexTarkastaja {
+public class Tarkastaja {
 
     private int[] ketjut;
     private int[] ketjujenKoot;
@@ -18,7 +18,7 @@ public class HexTarkastaja {
      * Pelilaudan kulmissa sijaitsevat viisikulmiot asetetaan
      * vasemman/oikean laidan ketjuihin.
      */
-    public HexTarkastaja(int laudanKoko) {
+    public Tarkastaja(int laudanKoko) {
         this.laudanKoko = laudanKoko;
         this.ketjut = new int[(laudanKoko + 2) * (laudanKoko + 2)];
         this.ketjujenKoot = new int[this.ketjut.length];

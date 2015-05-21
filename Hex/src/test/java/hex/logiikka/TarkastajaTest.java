@@ -1,22 +1,20 @@
 package hex.logiikka;
 
-import org.junit.After;
-import org.junit.AfterClass;
+
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-public class HexTarkastajaTest {
+public class TarkastajaTest {
 
-    HexTarkastaja t;
+    Tarkastaja t;
 
-    public HexTarkastajaTest() {
+    public TarkastajaTest (){
     }
 
     @Before
     public void setUp() {
-        t = new HexTarkastaja(11);
+        t = new Tarkastaja(11);
     }
 
     @Test

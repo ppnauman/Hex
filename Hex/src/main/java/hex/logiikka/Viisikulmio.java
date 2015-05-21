@@ -24,16 +24,4 @@ public class Viisikulmio extends Monikulmio {
         super(paikka, xKoord, yKoord);
         super.asetaVari(vari);
     }
-    
-    /**
-     * Korvaa yliluokan abstraktin metodin ja piirtää täytetyn Viisikulmion
-     * parametrina annetussa grafiikkakontekstissa.
-     * 
-     * @param graphics - grafiikkakonteksti
-     */
-    @Override
-    public void piirra(Graphics graphics) {
-        graphics.setColor(super.haeVari());
-        graphics.fillPolygon(super.haeXt(), super.haeYt(), 5);
-    }
 }

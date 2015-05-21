@@ -60,24 +60,22 @@ public class Pelilauta {
     
     //6.k:n x-koordinaatit laskeva apumetodi
     private void laskeXkoord_6(int i, int j, int[] x) {
-        int rako = 3;
+        
         int leveys = (int)(Math.sqrt(3.0)*30.0);
         int puoliLeveys = (int)((Math.sqrt(3.0)*30.0)/2.0);
-        x[0] = x[1] = j*(leveys+rako) + i*(puoliLeveys+rako) ;
-        x[2] = x[0] + puoliLeveys;
-        x[3] = x[4] = x[0] + leveys;
-        x[5] = x[2];  
+        x[0] = x[1] = 0;
+        x[2] = x[5] =puoliLeveys;
+        x[3] = x[4] = leveys;
+          
     }
     
     //6.k:n y-koordinaatit laskeva apumetodi
     private void laskeYkoord_6(int i, int j, int[] y) {
-        int rako = 3;
-        int korkeus = 60;
-        int rivinKorkeus = 3/4*korkeus;
-        y[0] = y[4] = 30+rako + i*(45+rako);
-        y[1] = y[3] = y[0] -30;
-        y[2] = y[1] -15;
-        y[5] = y[4]+15;
+        
+        y[0] = y[4] = 45;
+        y[1] = y[3] = 15;
+        y[2] = 0;
+        y[5] = 60;
     }
     
     
@@ -94,19 +92,5 @@ public class Pelilauta {
         return this.pelilauta[i][j];
     }
     
-    /**
-     * Piirtää pelilaudan monikulmiot parametrina annetussa grafiikkakontekstissa.
-     * 
-     * @param graphics -grafiikkakonteksti
-     */
-    public void piirraLauta(Graphics graphics) {
-        for(int i=0; i < pelilauta.length; i++) {
-            for(int j=0; j<pelilauta[0].length; j++) {
-                if(pelilauta[i][j]!= null) {
-                    pelilauta[i][j].piirra(graphics);
-                }
-                
-            }
-        }
-    }
+
 }

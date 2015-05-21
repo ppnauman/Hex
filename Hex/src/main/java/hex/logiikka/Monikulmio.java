@@ -65,13 +65,6 @@ public abstract class Monikulmio {
     
 
     
-    /**
-     * Abstrakti metodi, jonka tehtävä on piirtää Monikulmio näytölle
-     * parametrina annetussa grafiikkakontekstissa.
-     *
-     * @param graphics
-     */
-    public abstract void piirra(Graphics graphics);
     
     
     
