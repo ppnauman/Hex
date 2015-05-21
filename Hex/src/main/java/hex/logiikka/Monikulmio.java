@@ -8,10 +8,11 @@ import java.awt.Graphics;
  */
 public abstract class Monikulmio {
     private int paikka;
-    private int[] x;
-    private int[] y;
+    int xBound;
+    int yBound;
     private Color vari;
 
+    
     /**
      * Luo uuden harmaan Monikulmion, jonka kulmien paikkakoordinaatit annetaan
      * konstruktorin parametreina.
@@ -19,12 +20,13 @@ public abstract class Monikulmio {
      * @param xKoord - x-koordinaatit
      * @param yKoord - y-koordinaatit
      */
-    public Monikulmio(int paikka, int[] xKoord, int[] yKoord) {
-        this.x = xKoord;
-        this.y = yKoord;
+    public Monikulmio(int paikka, int xBound, int yBound) {
         this.paikka = paikka;
         this.vari = Color.LIGHT_GRAY;
+        this.xBound = xBound;
+        this.yBound = yBound;   
     }
+    
 
     /**
      * Vaihtaa Monikulmion värin parametrina annetun Color-olion mukaiseksi.
@@ -51,37 +53,16 @@ public abstract class Monikulmio {
         return this.vari;
     }
     
-    public int[] haeXt() {
-        return this.x;
+    
+    public int haeXbound() {
+        return this.xBound;
     }
     
-    public int[] haeYt() {
-        return this.y;
+    public int haeYbound() {
+        return this.yBound;
     }
     
     public int haePaikka() {
         return this.paikka;
-    }
-    
-
-    
-    
-    
-    
-    /**
-     * Palauttaa merkkijonoesityksen monikulmion sijainnista.
-     * @return paikkakoordinaatit
-     */
-    @Override
-    public String toString() {
-        String str ="x: "; 
-        for (int i=0; i<this.x.length; i++) {
-            str += this.x[i] + "," ;
-        }
-        str+="\ny: ";
-        for(int i=0; i<this.y.length; i++) {
-            str += this.y[i] + "," ;
-        }
-        return str;
     }
 }

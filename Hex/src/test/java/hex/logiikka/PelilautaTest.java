@@ -5,10 +5,8 @@
  */
 package hex.logiikka;
 
-import org.junit.After;
-import org.junit.AfterClass;
+import java.awt.Color;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -18,28 +16,35 @@ import static org.junit.Assert.*;
  */
 public class PelilautaTest {
     
+    Pelilauta p;
+    
     public PelilautaTest() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
     }
     
     @Before
     public void setUp() {
+        p = new Pelilauta(11, Color.RED, Color.BLUE);
+        p.alustaLauta();
     }
     
-    @After
-    public void tearDown() {
+    @Test
+    public void pelilautaOikeanLevyinen() {
+        assertEquals(13, p.haePelilauta().length);
+        
     }
-
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    //
-    // @Test
-    // public void hello() {}
+    
+    @Test
+    public void pelilautaOikeanKorkuinen() {
+        assertEquals(13, p.haePelilauta()[0].length);
+    }
+    
+    @Test
+    public void kuusikulmionXBoundOikein() {
+        assertEquals(753, p.haeMonikulmio(7,10).haeXbound());
+    }
+    
+    @Test
+    public void kuusikulmionYboundOikein() {
+        assertEquals(144, p.haeMonikulmio(3,4).haeYbound());
+    }
 }

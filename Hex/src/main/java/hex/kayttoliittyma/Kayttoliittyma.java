@@ -1,11 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 
 /**
- *
+ * ALUSTAVAA  KOKEILUA
  * @author ppnauman
  */
 package hex.kayttoliittyma;
@@ -44,20 +40,16 @@ public class Kayttoliittyma implements Runnable {
     }
  
     private void luoKomponentit(Container container) {
-        
-                int [] x = this.lauta.haeRuutu(1, 1).haeXt();
-                int[] y = this.lauta.haeRuutu(1, 1).haeYt();
+                int [] x = {0,0,26,52,52,26};
+                int[] y = {45,15,0,15,45,60};
                 KuusikRuutu hexButt = new KuusikRuutu(x,y);
                 hexButt.addMouseListener(new KuusikRuudunKuuntelija());
                 container.add(hexButt);
-                hexButt.setBounds(0,0,52,60);
+                hexButt.setBounds(this.lauta.haeMonikulmio(1, 1).haeXbound(),this.lauta.haeMonikulmio(1, 1).haeXbound(),52,60);
                 
         }
         
-    
- 
-    
- 
+
     public JFrame getFrame() {
         return frame;
     }

@@ -22,17 +22,9 @@ public class KuusikulmioTest {
     public void setUp() {
         int[] x = {10,10,15,20,20,15,};
         int[] y = {100,110,115,110,100,95,};
-        k = new Kuusikulmio(55, x, y);
+        k = new Kuusikulmio(55, 0,0);
     }
-
     
-    @Test
-    public void konstruktoriAsettaaKoordinaatitOikein() {
-        String odotetutKoordinaatit = "x: 10,10,15,20,20,15,\n"
-                + "y: 100,110,115,110,100,95,";
-        assertEquals(odotetutKoordinaatit, k.toString());     
-                
-    }
     
     @Test
     public void tummennaVariaToimii() {

@@ -21,7 +21,7 @@ public class KuusikRuudunKuuntelija implements MouseListener {
     public KuusikRuudunKuuntelija() {
         
     }
-    
+    //testausta vain
     @Override
     public void mousePressed (MouseEvent me) {
         KuusikRuutu tamaRuutu = (KuusikRuutu)me.getSource();
@@ -30,19 +30,22 @@ public class KuusikRuudunKuuntelija implements MouseListener {
     }
     
    
-
+    @Override
     public void mouseReleased(MouseEvent e) {
         
     }
 
+    @Override
     public void mouseEntered(MouseEvent e) {
         
     }
 
+    @Override
     public void mouseExited(MouseEvent e) {
         
     }
 
+    @Override
     public void mouseClicked(MouseEvent e) {
         
     }

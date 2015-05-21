@@ -16,6 +16,7 @@ Peliin osallistuu kaksi pelaajaa.
 	* syötä käyttäjänimi
 	* valitse väri
 	* aseta kuusiokulmio laudalle omalla vuorolla
+	* aloita peli alusta (vaikka se olisi kesken)
 	* (tarkastele pelaajakohtaisia tilastoja)
 
 ##Järjestelmän toiminnot

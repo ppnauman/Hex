@@ -4,7 +4,7 @@ package hex.logiikka;
 import java.awt.Color;
 
 /**
- * API joka määrittää pelilogiikan käyttöliittymälle tarjoamat toiminnot
+ * API joka tulee määrittelemään pelilogiikan käyttöliittymälle näkyvät metodit
  * 
  */
 public interface HexPinta {}

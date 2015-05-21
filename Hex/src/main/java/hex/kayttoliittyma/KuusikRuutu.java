@@ -22,9 +22,7 @@ public class KuusikRuutu extends JButton {
         this.muoto = new Polygon(x,y,6);
         this.vari = Color.GRAY;
         setContentAreaFilled(false);
-        setBorderPainted(false);
-        
-        
+        setBorderPainted(false);  
     }
     
     

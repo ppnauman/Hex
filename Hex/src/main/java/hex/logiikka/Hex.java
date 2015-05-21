@@ -13,9 +13,9 @@ public class Hex {
     
     public static void main (String[] args) {
         
-        // testaa ohjelmasi toimintaa täällä
+        // häkkeröintiKOKEILUA
         
-        Pelilauta lauta = new Pelilauta(11, Color.RED, Color.BLUE, 768);
+        Pelilauta lauta = new Pelilauta(11, Color.RED, Color.BLUE);
         lauta.alustaLauta();
         Kayttoliittyma kayttoliittyma = new Kayttoliittyma(lauta);
         SwingUtilities.invokeLater(kayttoliittyma);
