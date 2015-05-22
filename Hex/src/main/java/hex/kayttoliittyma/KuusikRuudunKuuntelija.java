@@ -21,7 +21,7 @@ public class KuusikRuudunKuuntelija implements MouseListener {
     @Override
     public void mousePressed (MouseEvent me) {
         KuusikRuutu tamaRuutu = (KuusikRuutu)me.getSource();
-        tamaRuutu.asetaVari(Color.PINK);
+        tamaRuutu.asetaVari(Color.RED);
         tamaRuutu.repaint();
     }
     
@@ -32,13 +32,20 @@ public class KuusikRuudunKuuntelija implements MouseListener {
     }
 
     @Override
-    public void mouseEntered(MouseEvent e) {
-        
+    public void mouseEntered(MouseEvent me) {
+        KuusikRuutu tamaRuutu = (KuusikRuutu)me.getSource();
+        tamaRuutu.tummennaVari();
+        tamaRuutu.repaint();
     }
 
     @Override
-    public void mouseExited(MouseEvent e) {
+    public void mouseExited(MouseEvent me) {
         
+        KuusikRuutu tamaRuutu = (KuusikRuutu)me.getSource();
+        if(tamaRuutu.haeRuudunVari() == Color.RED) return;
+        tamaRuutu.vaalennaVari();
+        tamaRuutu.repaint();
+       
     }
 
     @Override

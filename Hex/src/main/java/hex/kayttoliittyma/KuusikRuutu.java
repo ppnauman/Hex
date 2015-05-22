@@ -20,9 +20,21 @@ public class KuusikRuutu extends JButton {
     public KuusikRuutu (int[] x, int[] y) {
         super();
         this.muoto = new Polygon(x,y,6);
-        this.vari = Color.GRAY;
+        this.vari = Color.LIGHT_GRAY;
         setContentAreaFilled(false);
         setBorderPainted(false);  
+    }
+    
+    public void tummennaVari() {
+        this.vari = this.vari.darker();
+    }
+    
+    public void vaalennaVari() {
+        this.vari = this.vari.brighter();
+    }
+    
+    public Color haeRuudunVari() {
+        return this.vari;
     }
     
     
