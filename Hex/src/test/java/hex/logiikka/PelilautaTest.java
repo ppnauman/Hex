@@ -40,11 +40,11 @@ public class PelilautaTest {
     
     @Test
     public void kuusikulmionXBoundOikein() {
-        assertEquals(753, p.haeMonikulmio(7,10).haeXbound());
+        assertEquals(753, p.haeMonikulmio(7,10).haeX());
     }
     
     @Test
     public void kuusikulmionYboundOikein() {
-        assertEquals(144, p.haeMonikulmio(3,4).haeYbound());
+        assertEquals(144, p.haeMonikulmio(3,4).haeY());
     }
 }

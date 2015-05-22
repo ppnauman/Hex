@@ -40,14 +40,15 @@ public class Kayttoliittyma implements Runnable {
     }
  
     private void luoKomponentit(Container container) {
-                int [] x = {0,0,26,52,52,26};
-                int[] y = {45,15,0,15,45,60};
-                KuusikRuutu hexButt = new KuusikRuutu(x,y);
-                hexButt.addMouseListener(new KuusikRuudunKuuntelija());
-                container.add(hexButt);
-                hexButt.setBounds(this.lauta.haeMonikulmio(1, 1).haeX(),this.lauta.haeMonikulmio(1, 1).haeY(),52,60);
-                
-        }
+        int[] x = {0, 0, 26, 52, 52, 26};
+        int[] y = {45, 15, 0, 15, 45, 60};
+
+        KuusikRuutu hexButt = new KuusikRuutu(x, y);
+        hexButt.addMouseListener(new KuusikRuudunKuuntelija());
+        container.add(hexButt);
+        hexButt.setBounds(this.lauta.haeMonikulmio(1, 1).haeX(), this.lauta.haeMonikulmio(1, 1).haeY(), 52, 60);
+
+    }
         
 
     public JFrame getFrame() {
