@@ -29,7 +29,7 @@ public class Kayttoliittyma implements Runnable {
     @Override
     public void run() {
         frame = new JFrame();
-        frame.setPreferredSize(new Dimension(400, 400));
+        frame.setPreferredSize(new Dimension(1100, 700));
         frame.setLayout(null);
         
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
