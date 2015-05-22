@@ -2,10 +2,11 @@
 package hex.logiikka;
 
 import java.awt.Color;
-import java.awt.Graphics;
+
 
 /**
  *Luokka kuvaa kuusikulmioista koostuvan pelilaudan ja sillä vallitsevan tilanteen.
+ *Laudan ohella luokka tuntee pelaajien värit.
  * 
  */
 public class Pelilauta {
@@ -48,17 +49,17 @@ public class Pelilauta {
     }
     
     
-    //Kuusikulmion generoiva metodi
+    //Kuusikulmion laudan tiettyyn paikkaan generoiva apumetodi, joka osallistuu
+    //laudan alustukseen.
     private void luoKuusikulmio(int i, int j) {
-        int [] x = { 0, 0, 26 , 52, 52, 26 };
-        int [] y = { 45, 15, 0, 15, 45, 60 };
-        int xBound = i*(26+3)+j*(52+3);
-        int yBound = i*(45+3);
-        this.pelilauta[i][j] = new Kuusikulmio((pelilauta.length*i+j), xBound, yBound);
+        int x = i*(26+3)+j*(52+3);
+        int y = i*(45+3);
+        int paikkaIndeksi = pelilauta.length*i+j;
+        this.pelilauta[i][j] = new Kuusikulmio(paikkaIndeksi, x,y);
     }
     
    
-    //Viisikulmion generoiva metodi
+    //Viisikulmion generoiva apumetodi, joka osallistuu laudan alustukseen
     private void luoViisikulmio(int i, int j, Color vari) {  
     }
     
@@ -73,6 +74,10 @@ public class Pelilauta {
     }
     
     
+    /**
+     * Palauttaa pelilaudan kaksiulotteisena taulukkona.
+     * @return pelilauta
+     */
     public Monikulmio[][] haePelilauta() {
         return this.pelilauta;
     }

@@ -25,22 +25,6 @@ public class KuusikulmioTest {
         k = new Kuusikulmio(55, 0,0);
     }
     
-    
-    @Test
-    public void tummennaVariaToimii() {
-        Color alkuVari = k.haeVari();
-        float[] alkuRGBt = k.haeVari().getRGBColorComponents(null);
-        k.tummennaVaria();
-        float[] loppuRGBt = k.haeVari().getRGBColorComponents(null);
-        boolean tummempi = true;
-        for (int i = 0; i < 3; i++){
-            if(loppuRGBt[i] > alkuRGBt[i]) tummempi = false;
-        }
-        if( alkuVari == k.haeVari()) tummempi = false;
-        assertEquals(true, tummempi); 
-    }
-    
-    
     @Test
     public void konstruktoriAsettaaVarinHarmaaksi() {
         assertEquals(Color.LIGHT_GRAY, k.haeVari());

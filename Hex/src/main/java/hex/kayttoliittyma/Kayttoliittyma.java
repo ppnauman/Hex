@@ -45,7 +45,7 @@ public class Kayttoliittyma implements Runnable {
                 KuusikRuutu hexButt = new KuusikRuutu(x,y);
                 hexButt.addMouseListener(new KuusikRuudunKuuntelija());
                 container.add(hexButt);
-                hexButt.setBounds(this.lauta.haeMonikulmio(1, 1).haeXbound(),this.lauta.haeMonikulmio(1, 1).haeXbound(),52,60);
+                hexButt.setBounds(this.lauta.haeMonikulmio(1, 1).haeX(),this.lauta.haeMonikulmio(1, 1).haeY(),52,60);
                 
         }
         

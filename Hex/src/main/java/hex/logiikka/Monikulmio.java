@@ -8,23 +8,23 @@ import java.awt.Graphics;
  */
 public abstract class Monikulmio {
     private int paikka;
-    int xBound;
-    int yBound;
+    private int x;
+    private int y;
     private Color vari;
 
     
     /**
-     * Luo uuden harmaan Monikulmion, jonka kulmien paikkakoordinaatit annetaan
-     * konstruktorin parametreina.
+     * Monikulmion konstruktori, jossa 
      *
-     * @param xKoord - x-koordinaatit
-     * @param yKoord - y-koordinaatit
+     * @param paikkaIndeksi sijainti pelilaudalla (0..ruutujen km)
+     * @param x komponentin absoluuttinen sijainti x-akselilla
+     * @param y komponentin absoluuttinen sijainti y-akselilla
      */
-    public Monikulmio(int paikka, int xBound, int yBound) {
-        this.paikka = paikka;
+    public Monikulmio(int paikkaIndeksi, int x, int y) {
+        this.paikka = paikkaIndeksi;
+        this.x = x;
+        this.y = y;
         this.vari = Color.LIGHT_GRAY;
-        this.xBound = xBound;
-        this.yBound = yBound;   
     }
     
 
@@ -38,13 +38,6 @@ public abstract class Monikulmio {
     }
 
     /**
-     * Vaihtaa Monikulmion värisävyä tummemmaksi.
-     */
-    public void tummennaVaria() {
-        this.vari = this.vari.darker();
-    }
-
-    /**
      * Palauttaa Monikulmion tämän hetkisen värin.
      * 
      * @return väri
@@ -53,16 +46,30 @@ public abstract class Monikulmio {
         return this.vari;
     }
     
-    
-    public int haeXbound() {
-        return this.xBound;
+    /**
+     * Palauttaa Monikulmion 'bounding boxin' absoluuttisen sijainnin x-akselilla.
+     *
+     * @return x-koordinaatti
+     */
+    public int haeX() {
+        return this.x;
     }
     
-    public int haeYbound() {
-        return this.yBound;
+     /**
+     * Palauttaa Monikulmion 'bounding boxin' absoluuttisen sijainnin y-akselilla.
+     * 
+     * @return y-koordinaatti
+     */
+    public int haeY() {
+        return this.y;
     }
     
-    public int haePaikka() {
+    /**
+     * Palauttaa Monikulmion paikan pelilaudalla kokonaislukuindeksinä ilmaistuna (0..ruutujen lkm).
+     * 
+     * @return paikka indeksinä
+     */
+    public int haePaikkaIndeksi() {
         return this.paikka;
     }
 }
