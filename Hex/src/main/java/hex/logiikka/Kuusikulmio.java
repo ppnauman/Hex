@@ -14,7 +14,7 @@ public class Kuusikulmio extends Monikulmio {
      * Lisäksi kuusikulmio tietää paikkansa pelilaudalla indeksin muodossa.
      * Yliluokan konstruktorin mukaisesti oletusväri on LIGHT_GRAY.
      *
-     * @param paikkaIndeksi sijainti pelilaudalla (0..ruutujen km)
+     * @param paikkaIndeksi sijainti pelilaudalla (0..ruutujen lkm-1)
      * @param x komponentin absoluuttinen sijainti x-akselilla
      * @param y komponentin absoluuttinen sijainti y-akselilla
      */

@@ -2,7 +2,7 @@
 package hex.logiikka;
 
 import java.awt.Color;
-import java.awt.Graphics;
+
 
 /**
  * Aliluokka kuvaa pelilaudan Viisikulmion. Viisikulmiot reunustavat pelilaudalla 
@@ -13,15 +13,17 @@ public class Viisikulmio extends Monikulmio {
     
     
     /**
-     * Luo uuden värillisen viisikulmion jonka paikka grafiikkakontekstissa
-     * on ilmaistu x- ja y-koordinaatteina.
-     * 
-     * @param xKoord - X-koordinaattien taulukko
-     * @param yKoord - Y-koordinaattien taulukko
-     * @param vari viisikulmion väri
+     * Konstruktori luo uuden Viisikulmion, jonka 'bounding boxin'
+     * sijainti grafiikkakontekstissa on ilmaistu x- ja y-koordinaatteina.
+     * Lisäksi viisikulmio tietää paikkansa pelilaudalla indeksin muodossa.
+     * Viisikulmiolla on aina pelin pelaajaa vastaava väri.
+     *
+     * @param paikkaIndeksi sijainti pelilaudalla (0..ruutujen lkm-1)
+     * @param x komponentin absoluuttinen sijainti x-akselilla
+     * @param y komponentin absoluuttinen sijainti y-akselilla
      */
-    public Viisikulmio(int paikka, int xBound, int yBound, Color vari) {
-        super(paikka, xBound, yBound);
+    public Viisikulmio(int paikkaIndeksi, int x, int y, Color vari) {
+        super(paikkaIndeksi, x, y);
         super.asetaVari(vari);
     }
 }
