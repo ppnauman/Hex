@@ -8,6 +8,7 @@ package hex.kayttoliittyma;
  
 import hex.logiikka.Kuusikulmio;
 import hex.logiikka.Pelilauta;
+import java.awt.Color;
 import java.awt.Container;
 import java.awt.Dimension;
 import javax.swing.*;
@@ -30,11 +31,12 @@ public class Kayttoliittyma implements Runnable {
         frame = new JFrame();
         frame.setPreferredSize(new Dimension(400, 400));
         frame.setLayout(null);
+        
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         
         luoKomponentit(frame.getContentPane());
         
- 
+        
         frame.pack();
         frame.setVisible(true);
     }
@@ -42,7 +44,7 @@ public class Kayttoliittyma implements Runnable {
     private void luoKomponentit(Container container) {
         int[] x = {0, 0, 26, 52, 52, 26};
         int[] y = {45, 15, 0, 15, 45, 60};
-        
+        container.setBackground(Color.BLACK);
         for (int i = 1; i < 12; i++) {
             for (int j = 1; j < 12; j++) {
                 KuusikRuutu hexButt = new KuusikRuutu(x,y);
