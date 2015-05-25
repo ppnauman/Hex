@@ -15,6 +15,7 @@ public class KuusikRuutu extends JButton {
     
     private Polygon muoto;
     private Color vari;
+    private int paikkaIndeksi;
     
     
     public KuusikRuutu (int[] x, int[] y) {
