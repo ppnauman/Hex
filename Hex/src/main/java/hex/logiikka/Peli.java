@@ -1,20 +1,21 @@
-
 package hex.logiikka;
 
 import java.awt.Color;
 import java.util.ArrayList;
 
 /**
- * Koordinoi peliä.
- * 
+ * Koordinoi peliä ja toteuttaa käyttöliittymälle näkyvän rajapinnan (ns.
+ * fasaadi-luokka).
+ *
  */
-public class Peli{ //implements HexPinta{
+public class Peli implements HexPinta {
+
     private Tarkastaja tarkastaja;
     private Pelilauta lauta;
     private Pelaaja pelaaja1;
     private Pelaaja pelaaja2;
     private Pelaaja vuorossa;
-    
+
     public Peli(int pelinKoko, String nimi1, String nimi2, Color vari1, Color vari2) {
         this.tarkastaja = new Tarkastaja(pelinKoko);
         this.lauta = new Pelilauta(pelinKoko, this.tarkastaja, vari1, vari2);
@@ -22,32 +23,55 @@ public class Peli{ //implements HexPinta{
         this.pelaaja2 = new Pelaaja(nimi2, vari2);
         this.vuorossa = this.pelaaja1;
     }
-    
+
+    /**
+     * Vaihtaa vuoron pelaajalta toiselle.
+     */
     public void vaihdaVuoroa() {
-        if(this.vuorossa == this.pelaaja1) {
+        if (this.vuorossa == this.pelaaja1) {
             this.vuorossa = pelaaja2;
         } else {
             this.vuorossa = pelaaja1;
         }
     }
-    
-    
+
+    /**
+     * Palauttaa vuorossa olevan pelaajan värin.
+     *
+     * @return väri
+     */
     public Color variNytVuorossa() {
         return this.vuorossa.haeVari();
     }
-    
+
     /**
-     * Asettaa pelilaudalle uuden, vuorossa olevan pelaajan väriä vastaavan kuusikulmion.
-     * Mikäli ruutu on jo varattu, palauttaa totuusarvon false. Jos kulmio asetettiin,
-     * palauttaa true tietona graafiselle käyttöliittymälle.
-     * @param paikkaIndeksi - paikka pelilaudalla.
+     * Asettaa pelilaudalle uuden, vuorossa olevan pelaajan väriä vastaavan
+     * kuusikulmion. Mikäli ruutu on jo varattu, palauttaa totuusarvon false.
+     * Jos kulmio asetettiin, palauttaa true tietona graafiselle
+     * käyttöliittymälle.
+     *
+     * @param paikkaIndeksi - paikka pelilaudalla kokonaislukuindeksinä
+     * @param variNytVuorossa - kuusikulmiolle asetettava väri
+     * 
+     * @return voitiinko kuusikulmio asettaa true > kyllä false > ei
      */
-    
+    @Override
     public boolean asetaKuusikulmio(int paikkaIndeksi, Color variNytVuorossa) {
         boolean ruutuVarattu = this.lauta.onkoRuutuVarattu(paikkaIndeksi);
-        if(!ruutuVarattu) {
+        if (!ruutuVarattu) {
             this.lauta.asetaKulmio(paikkaIndeksi, this.vuorossa.haeVari());
         }
         return ruutuVarattu;
-    } 
+    }
+
+    /**
+     * Tarkistaa onko peli ratkennut. Mikäli peli on ratkennut, palauttaa
+     * voittajan nimen merkkijonoesityksenä. Jos peli ei ole ratkennut,
+     * palauttaa null-arvon.
+     *
+     * @return voittajan nimi
+     */
+    public String tarkistaVoittaja() {
+        return null;
+    }
 }

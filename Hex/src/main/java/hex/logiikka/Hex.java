@@ -13,7 +13,7 @@ public class Hex {
     
     public static void main (String[] args) {
         
-        // häkkeröintiKOKEILUA
+        // häkkeröintiKOKEILUA laudan piirtämiseen ja JButtonin muokkaamiseen
         Tarkastaja t = new Tarkastaja(11);
         Pelilauta lauta = new Pelilauta(11,t, Color.RED, Color.BLUE);
         lauta.alustaLauta();

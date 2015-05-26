@@ -117,11 +117,11 @@ public class Pelilauta {
      * @return laudan Monikulmio-olio.
      */
     public Monikulmio haeKulmioIndeksilla(int paikkaIndeksi) {
-        int i = paikkaIndeksi/this.pelilauta.length;
+        int i = paikkaIndeksi / this.pelilauta.length;
         int j = paikkaIndeksi % this.pelilauta.length;
-        return this.pelilauta[i][j];           
+        return this.pelilauta[i][j];
     }
-    
+
     
     /**
      * Palauttaa pelilaudan kaksiulotteisena taulukkona.
