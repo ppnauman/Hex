@@ -6,7 +6,6 @@ import java.util.ArrayList;
 /**
  * Koordinoi peliä ja toteuttaa käyttöliittymälle näkyvän rajapinnan (ns.
  * fasaadi-luokka).
- *
  */
 public class Peli implements HexPinta {
 
@@ -72,6 +71,9 @@ public class Peli implements HexPinta {
      * @return voittajan nimi
      */
     public String tarkistaVoittaja() {
+        int voittaja = this.tarkastaja.voittajanTarkistus();
+        if(voittaja == 1) return this.pelaaja1.haeNimi();
+        if(voittaja == 2) return this.pelaaja2.haeNimi();
         return null;
     }
 }
