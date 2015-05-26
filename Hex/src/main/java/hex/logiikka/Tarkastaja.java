@@ -1,5 +1,7 @@
 package hex.logiikka;
 
+import java.util.ArrayList;
+
 /**
  * Luokka tarkkailee pelin ratkeamista eli laudan reunalta toiselle ulottuvan
  * 6-kulmioiden ketjun muodostumista union-find rakenteen avulla.
@@ -11,12 +13,11 @@ public class Tarkastaja {
     private int laudanKoko;
 
     /**
-     * Konstruktori asettaa pelilaudan kunkin kuusikulmion omaan
-     * ketjuunsa, joiden koko on yksi. Lisäksi pelilautaa reunustavat
-     * 'apuviisikulmiot', jotka asetetaan siten, että
-     * kullakin laudan sivustalla olevat viisikulmiot kuuluvat omaan ketjuunsa.
-     * Pelilaudan kulmissa sijaitsevat viisikulmiot asetetaan
-     * vasemman/oikean laidan ketjuihin.
+     * Konstruktori asettaa pelilaudan kunkin kuusikulmion omaan ketjuunsa,
+     * joiden koko on yksi. Lisäksi pelilautaa reunustavat 'apuviisikulmiot',
+     * jotka asetetaan siten, että kullakin laudan sivustalla olevat
+     * viisikulmiot kuuluvat omaan ketjuunsa. Pelilaudan kulmissa sijaitsevat
+     * viisikulmiot asetetaan vasemman/oikean laidan ketjuihin.
      */
     public Tarkastaja(int laudanKoko) {
         this.laudanKoko = laudanKoko;
@@ -84,6 +85,20 @@ public class Tarkastaja {
     }
 
     /**
+     * Yhdistää ensimmäisenä parametrina annetun monikulmion edustaman ketjun
+     * jokaiseen toisena parametrina annettujen monikulmioiden kethuihin.
+     * Lopputuloksena kaikki monikulmiot kuuluvat samaan ketjuun.
+     *
+     * @param monikulmio1
+     * @param naapuriMonikulmiot
+     */
+    public void yhdistaUseatKetjut(int monikulmio1, ArrayList<Integer> naapuriMonikulmiot) {
+        for (Integer naapuri : naapuriMonikulmiot) {
+            yhdistaKetjut(monikulmio1, naapuri);
+        }
+    }
+
+    /**
      * Tarkistaa onko peli ratkennut eli kuuluvatko ylemman ja alemman tai
      * oikean ja vasemman reunustan viisikulmiot samaan ketjuun. Jos pelaaja1 on
      * voittanut, paluuarvo on 1. Jos pelaaja2 on voittanut, paluuarvo on 2. Jos
@@ -111,8 +126,8 @@ public class Tarkastaja {
 
     /**
      * Palauttaa pelilaudalla olevien ketjujen tämänhetkiset koot testauksen
-     * kannalta havainnollisena 2D -merkkijonoesityksenä.
-     *git commai
+     * kannalta havainnollisena 2D -merkkijonoesityksenä. git commai
+     *
      * @return union-find -ketjujen koot
      */
     public String ketjujenKoot() {
@@ -127,8 +142,8 @@ public class Tarkastaja {
     }
 
     /**
-     * Palauttaa testauksen kannalta havainnollisen 2D -merkkijonoesityksen siitä,
-     * mihin ketjuun kukin pelilaudan monikulmio kuuluu.
+     * Palauttaa testauksen kannalta havainnollisen 2D -merkkijonoesityksen
+     * siitä, mihin ketjuun kukin pelilaudan monikulmio kuuluu.
      *
      * @return union find -ketjut
      */

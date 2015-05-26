@@ -17,7 +17,7 @@ public class Peli implements HexPinta {
 
     public Peli(int pelinKoko, String nimi1, String nimi2, Color vari1, Color vari2) {
         this.tarkastaja = new Tarkastaja(pelinKoko);
-        this.lauta = new Pelilauta(pelinKoko, this.tarkastaja, vari1, vari2);
+        this.lauta = new Pelilauta(pelinKoko, vari1, vari2);
         this.pelaaja1 = new Pelaaja(nimi1, vari1);
         this.pelaaja2 = new Pelaaja(nimi2, vari2);
         this.vuorossa = this.pelaaja1;
@@ -58,7 +58,9 @@ public class Peli implements HexPinta {
     public boolean asetaKuusikulmio(int paikkaIndeksi, Color variNytVuorossa) {
         boolean ruutuVarattu = this.lauta.onkoRuutuVarattu(paikkaIndeksi);
         if (!ruutuVarattu) {
-            this.lauta.asetaKulmio(paikkaIndeksi, this.vuorossa.haeVari());
+            ArrayList<Integer> yhdistettavatNaapurit = 
+                    this.lauta.asetaKulmio(paikkaIndeksi, this.vuorossa.haeVari());
+            this.tarkastaja.yhdistaUseatKetjut(paikkaIndeksi, yhdistettavatNaapurit);
         }
         return ruutuVarattu;
     }

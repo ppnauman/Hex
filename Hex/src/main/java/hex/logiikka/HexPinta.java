@@ -9,8 +9,28 @@ import java.awt.Color;
  * 
  */
 public interface HexPinta {
-
+    
+    /**
+     * 
+     * @param paikkaIndeksi
+     * @param variNytVuorossa
+     * @return 
+     */
     boolean asetaKuusikulmio(int paikkaIndeksi, Color variNytVuorossa);
+    
+    /**
+     * 
+     * @return 
+     */
+    Color variNytVuorossa();
+   
+    /**
+     * 
+     * @return 
+     */
+    String tarkistaVoittaja();
+    
+    
     
    
     

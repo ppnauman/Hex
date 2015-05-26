@@ -16,7 +16,7 @@ public class PelilautaTest {
     
     @Before
     public void setUp() {
-        p = new Pelilauta(11, new Tarkastaja(11), Color.RED, Color.BLUE);
+        p = new Pelilauta(11, Color.RED, Color.BLUE);
         p.alustaLauta();
     }
     
