@@ -25,9 +25,10 @@ public class Kayttoliittyma implements Runnable {
     @Override
     public void run() {
         frame = new JFrame("Game of Hex");
-        frame.setPreferredSize(kehyksenKoko());
+        
+        
         frame.setLayout(null);
-
+        asetaPaikka(frame);
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
         luoKomponentit(frame.getContentPane());
@@ -54,10 +55,17 @@ public class Kayttoliittyma implements Runnable {
         return frame;
     }
     
-    public Dimension kehyksenKoko() {
+    /*asettaa peli-ikkunan leveydeksi 80% näytön leveydestä, korkeudeksi 90% näytön korkeudesta
+    ja asettaa ikkunan keskelle näyttöä.*/
+    private void asetaPaikka (JFrame kehys) {
         Dimension naytonKoko = Toolkit.getDefaultToolkit().getScreenSize();
         int korkeus = (int)naytonKoko.height/10*9;
         int leveys = (int)naytonKoko.width/10*8;
-        return new Dimension(leveys, korkeus);
+        int y = naytonKoko.height/100*5;
+        int x = naytonKoko.width/100*10;
+        kehys.setLocation(x, y);
+        kehys.setPreferredSize(new Dimension(leveys,korkeus));
     }
+    
+
 }
