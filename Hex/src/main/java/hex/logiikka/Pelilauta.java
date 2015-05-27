@@ -65,7 +65,7 @@ public class Pelilauta {
      * @return true = varattu, false = vapaa
      */
     public boolean onkoRuutuVarattu(int paikkaIndeksi) {
-        return (this.haeKulmioIndeksilla(paikkaIndeksi).haeVari() == Color.LIGHT_GRAY);
+        return (this.haeKulmioIndeksilla(paikkaIndeksi).haeVari() != Color.LIGHT_GRAY);
     }
 
     /**
@@ -89,6 +89,7 @@ public class Pelilauta {
             paikkaIndeksi + w, paikkaIndeksi + w - 1, paikkaIndeksi - w + 1};
         ArrayList<Integer> samanvariset = new ArrayList();
         for (int i = 0; i < 6; i++) {
+            System.out.println(naapurit[i]);
             if (this.haeKulmioIndeksilla(naapurit[i]).haeVari() == vari) {
                 samanvariset.add(naapurit[i]);
             }
