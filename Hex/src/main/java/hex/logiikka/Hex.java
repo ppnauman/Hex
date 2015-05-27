@@ -12,11 +12,8 @@ import javax.swing.SwingUtilities;
 public class Hex {
     
     public static void main (String[] args) {
-        
-        Tarkastaja t = new Tarkastaja(11);
-        System.out.println(t);
-        
-        // KOKEILUA laudan piirtämiseen ja JButtonin muokkaamiseen
+
+        // KOKEILUA laudan piirtämiseksi ja JButtonin muokkaamiseksi
         Pelilauta lauta = new Pelilauta(11, Color.RED, Color.BLUE);
         lauta.alustaLauta();
         Kayttoliittyma kayttoliittyma = new Kayttoliittyma(lauta);

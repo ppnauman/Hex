@@ -5,11 +5,11 @@
  */
 package hex.kayttoliittyma;
 
-import hex.logiikka.Kuusikulmio;
 import hex.logiikka.Pelilauta;
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.Dimension;
+import java.awt.Toolkit;
 import javax.swing.*;
 
 public class Kayttoliittyma implements Runnable {
@@ -24,8 +24,8 @@ public class Kayttoliittyma implements Runnable {
 
     @Override
     public void run() {
-        frame = new JFrame();
-        frame.setPreferredSize(new Dimension(1100, 700));
+        frame = new JFrame("Game of Hex");
+        frame.setPreferredSize(kehyksenKoko());
         frame.setLayout(null);
 
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -52,5 +52,12 @@ public class Kayttoliittyma implements Runnable {
 
     public JFrame getFrame() {
         return frame;
+    }
+    
+    public Dimension kehyksenKoko() {
+        Dimension naytonKoko = Toolkit.getDefaultToolkit().getScreenSize();
+        int korkeus = (int)naytonKoko.height/10*9;
+        int leveys = (int)naytonKoko.width/10*8;
+        return new Dimension(leveys, korkeus);
     }
 }
