@@ -65,11 +65,11 @@ public abstract class Monikulmio {
     }
     
     /**
-     * Palauttaa Monikulmion paikan pelilaudalla kokonaislukuindeksinä ilmaistuna (0..ruutujen lkm).
+     * Palauttaa Monikulmion paikan pelilaudalla kokonaislukuindeksinä ilmaistuna (0..ruutujen lkm-1).
      * 
      * @return paikka indeksinä
      */
-    public int haePaikkaIndeksi() {
+    public int haePaikkaindeksi() {
         return this.paikka;
     }
 }

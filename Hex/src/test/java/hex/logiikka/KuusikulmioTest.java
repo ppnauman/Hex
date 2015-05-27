@@ -35,4 +35,9 @@ public class KuusikulmioTest {
         k.asetaVari(Color.white);
         assertEquals(Color.white, k.haeVari());
     }
+    
+    @Test
+    public void haePaikkaindeksiToimii() {
+        assertEquals(55, k.haePaikkaindeksi());
+    }
 }
