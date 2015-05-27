@@ -35,9 +35,19 @@ public class PeliTest {
     
     @Test
     public void vaihdaVuoroaTesti() {
-        for(int i=0; i<3; i++) {
+        for(int i=0; i<5; i++) {
             p.vaihdaVuoroa();
         }      
         assertEquals(Color.WHITE, p.variNytVuorossa());
+    }
+    
+    @Test
+    public void voittajanTarkistusTesti() {
+        
+    }
+    
+    @Test
+    public void asetaKuusikulmioTesti() {
+        
     }
 }
