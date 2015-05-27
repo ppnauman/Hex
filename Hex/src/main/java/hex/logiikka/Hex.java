@@ -15,13 +15,13 @@ public class Hex {
         
         Tarkastaja t = new Tarkastaja(11);
         System.out.println(t);
-        /*
-        // häkkeröintiKOKEILUA laudan piirtämiseen ja JButtonin muokkaamiseen
+        
+        // KOKEILUA laudan piirtämiseen ja JButtonin muokkaamiseen
         Pelilauta lauta = new Pelilauta(11, Color.RED, Color.BLUE);
         lauta.alustaLauta();
         Kayttoliittyma kayttoliittyma = new Kayttoliittyma(lauta);
         SwingUtilities.invokeLater(kayttoliittyma);
-                */
+                
     }
 }
     
