@@ -1,6 +1,7 @@
 package hex.logiikka;
 
 
+import java.util.ArrayList;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -103,6 +104,18 @@ public class TarkastajaTest {
         t.yhdistaKetjut(146, 133);
         t.yhdistaKetjut(133, 120);
         assertEquals(3, t.ketjunKoko(133));
+    }
+    
+    @Test
+    public void yhdistaUseatKetjutTesti_1() {
+        t.yhdistaKetjut(82, 83);
+        t.yhdistaKetjut(85, 98);
+        ArrayList<Integer> naapurit = new ArrayList();
+        naapurit.add(83);
+        naapurit.add(71);
+        naapurit.add(85);
+        t.yhdistaUseatKetjut(84, naapurit);
+        assertEquals(t.loydaKetju(71), t.loydaKetju(98));
     }
 
     @Test

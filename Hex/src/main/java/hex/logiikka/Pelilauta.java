@@ -89,7 +89,6 @@ public class Pelilauta {
             paikkaIndeksi + w, paikkaIndeksi + w - 1, paikkaIndeksi - w + 1};
         ArrayList<Integer> samanvariset = new ArrayList();
         for (int i = 0; i < 6; i++) {
-            System.out.println(naapurit[i]);
             if (this.haeKulmioIndeksilla(naapurit[i]).haeVari() == vari) {
                 samanvariset.add(naapurit[i]);
             }
