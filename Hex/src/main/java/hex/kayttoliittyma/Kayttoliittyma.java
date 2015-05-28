@@ -13,6 +13,7 @@ import java.awt.Polygon;
 import java.awt.Rectangle;
 import java.awt.Toolkit;
 import javax.swing.*;
+import javax.swing.border.Border;
 
 public class Kayttoliittyma implements Runnable {
 
@@ -28,7 +29,7 @@ public class Kayttoliittyma implements Runnable {
     @Override
     public void run() {
         kehys = new JFrame("Game of Hex");
-        
+
         //absoluuttinen asettelu
         kehys.setLayout(null);
         asetaKehyksenPaikka(kehys);
@@ -189,8 +190,8 @@ public class Kayttoliittyma implements Runnable {
     }
     
     private Rectangle ruudunPaikka(int i, int j, int kork, int lev, int rako) {
-        int x = i*(lev/2+rako/2) + j*(lev+rako);
-        int y = i*(kork/4*3+rako);
+        int x = 10 + i*(lev/2+rako/2) + j*(lev+rako);
+        int y = 20 + i*(kork/4*3+rako);
         return new Rectangle (x, y, lev, kork);
     }
     
