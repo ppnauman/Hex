@@ -1,6 +1,6 @@
 ##Projektiin käytetty aika (hh:min)
 
-###Yhteensä: 25:00
+###Yhteensä: 42:00
 
 ###11.5.15
  2:00 gitiin tutustumista, repositorion luonti, aiheen kuvaus, tuntikirjanpito
@@ -28,3 +28,24 @@
 
 ###21.5.15
  4:00 Swing -dokumentteja, muiden ohjelmien koodin tarkastelua, vähän kiroilua, onnistumisia, monikulmaisia komponentteja, luokkakaavion piirtämistä www.draw.io:ssa.. 
+
+###22.5.15
+ 0:30 Muita töitä.
+
+###23.5.15
+ 4:00 Luokka Peli.java ja käyttöliittymä
+
+###24.5.15
+ 0:00 Muita töitä su-vuorossa.
+
+###25.5.15
+ 3:00 Luokka Peli.java ym.
+
+###26.5.15
+ 3:00 Käyttöliittymä ja Peli.java
+
+###27.5.15
+ 3:00 Kuten eilen.
+
+###28.5.15
+ 4:00 Käyttöliittymä, Peli.java testejä, KäLin suunnittelua 
