@@ -9,17 +9,18 @@ import hex.logiikka.HexPinta;
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.Polygon;
 import java.awt.Rectangle;
 import java.awt.Toolkit;
 import javax.swing.*;
-import javax.swing.border.Border;
 
 public class Kayttoliittyma implements Runnable {
 
     private JFrame kehys;
     private HexPinta peli;
     private Dimension naytonKoko;
+    private JLabel info;
 
     public Kayttoliittyma(HexPinta peli) {
         this.peli = peli;
@@ -54,7 +55,9 @@ public class Kayttoliittyma implements Runnable {
         //ja niiden väliin jäävän raon koko
         int rako = Math.max(1, kork/20);
         
+        luoInfo(container);
         luoMonikulmiot(container, lev, kork, rako);
+        
       
     }
     
@@ -114,7 +117,7 @@ public class Kayttoliittyma implements Runnable {
                 }
                 else {
                     ruutu = new MonikRuutu(paikka, kuusik, Color.LIGHT_GRAY);
-                    ruutu.addMouseListener(new KuusikRuudunKuuntelija(this.peli));
+                    ruutu.addMouseListener(new KuusikRuudunKuuntelija(this.peli, this.info));
                 }
                 container.add(ruutu);
                 ruutu.setBounds(ruudunPaikka(i, j, kork, lev, rako));
@@ -177,6 +180,15 @@ public class Kayttoliittyma implements Runnable {
         return new Polygon(x, y, 3);
     }
     
+    private void luoInfo(Container container) {
+        info = new JLabel(peli.nimiNytVuorossa()+" - your turn to make a move");
+        container.add(info);
+        info.setForeground(peli.variNytVuorossa());
+        Font f = new Font("Sans",Font.BOLD, 14);
+        info.setFont(f);
+        info.setBounds(60,72, 500, 28);
+    }
+    
     private int maaritaKulmionKork() {
         if(this.naytonKoko.height > 800) {
             return 68;
@@ -190,8 +202,8 @@ public class Kayttoliittyma implements Runnable {
     }
     
     private Rectangle ruudunPaikka(int i, int j, int kork, int lev, int rako) {
-        int x = 10 + i*(lev/2+rako/2) + j*(lev+rako);
-        int y = 20 + i*(kork/4*3+rako);
+        int x = 15 + i*(lev/2+rako/2) + j*(lev+rako);
+        int y = 100 + i*(kork/4*3+rako);
         return new Rectangle (x, y, lev, kork);
     }
     

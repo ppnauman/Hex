@@ -40,6 +40,8 @@ public interface HexPinta {
      */
     Color variNytVuorossa();
     
+    String nimiNytVuorossa();
+    
     /**
      * 
      * @param paikkaIndeksi

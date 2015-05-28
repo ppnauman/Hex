@@ -6,13 +6,16 @@ import hex.logiikka.HexPinta;
 import java.awt.Color;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import javax.swing.JLabel;
 
 public class KuusikRuudunKuuntelija implements MouseListener {
     
     private HexPinta peli;
+    private JLabel info;
     
-    public KuusikRuudunKuuntelija(HexPinta peli) {
+    public KuusikRuudunKuuntelija(HexPinta peli, JLabel info) {
         this.peli = peli;
+        this.info = info;
     }
     
     @Override
@@ -21,6 +24,8 @@ public class KuusikRuudunKuuntelija implements MouseListener {
         tamaRuutu.asetaVari(this.peli.variNytVuorossa());
         tamaRuutu.repaint();
         this.peli.vaihdaVuoroa();
+        this.info.setForeground(peli.variNytVuorossa());
+        this.info.setText(peli.nimiNytVuorossa()+" - your turn to make a move");
     }
     
    

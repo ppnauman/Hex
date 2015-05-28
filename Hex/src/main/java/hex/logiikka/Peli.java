@@ -95,4 +95,8 @@ public class Peli implements HexPinta {
     public Color pelaaja2vari() {
         return this.pelaaja2.haeVari();
     }
+    
+    public String nimiNytVuorossa() {
+        return this.vuorossa.haeNimi();
+    }
 }
