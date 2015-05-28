@@ -16,6 +16,8 @@ public interface HexPinta {
      */
     int laudanKoko();
     
+    void vaihdaVuoroa();
+    
     /**
      * 
      * @param paikkaIndeksi

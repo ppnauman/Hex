@@ -97,7 +97,7 @@ public class Kayttoliittyma implements Runnable {
                 }
                 else {
                     ruutu = new MonikRuutu(paikka, kuusik, Color.LIGHT_GRAY);
-                    ruutu.addMouseListener(new KuusikRuudunKuuntelija());
+                    ruutu.addMouseListener(new KuusikRuudunKuuntelija(this.peli));
                 }
                 container.add(ruutu);
                 ruutu.setBounds(ruudunPaikka(i, j, kork, lev, rako));

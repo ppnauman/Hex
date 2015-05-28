@@ -2,27 +2,25 @@
 
 package hex.kayttoliittyma;
 
+import hex.logiikka.HexPinta;
 import java.awt.Color;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
-/**
- *Testing....
- * @author ppnauman
- */
 public class KuusikRuudunKuuntelija implements MouseListener {
     
+    private HexPinta peli;
     
-    
-    public KuusikRuudunKuuntelija() {
-        
+    public KuusikRuudunKuuntelija(HexPinta peli) {
+        this.peli = peli;
     }
-    //testausta vain
+    
     @Override
     public void mousePressed (MouseEvent me) {
         MonikRuutu tamaRuutu = (MonikRuutu)me.getSource();
-        tamaRuutu.asetaVari(Color.RED);
+        tamaRuutu.asetaVari(this.peli.variNytVuorossa());
         tamaRuutu.repaint();
+        this.peli.vaihdaVuoroa();
     }
     
    
