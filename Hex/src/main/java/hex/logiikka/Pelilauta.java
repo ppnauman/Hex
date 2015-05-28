@@ -44,17 +44,23 @@ public class Pelilauta {
         }
     }
 
+    /**
+     * Palauttaa laudan koon (sivun pituuden) reunustavat viisikulmiot mukaanlukien.
+     * @return pelilaudan koko
+     */
+    public int koko() {
+        return this.pelilauta.length;
+    }
+    
     //Kuusikulmion laudan tiettyyn paikkaan generoiva apumetodi, joka osallistuu
     //laudan alustukseen.
     private void luoKuusikulmio(int i, int j) {
-        int x = i * (26 + 3) + j * (52 + 3);
-        int y = i * (45 + 3);
-        int paikkaIndeksi = pelilauta.length * i + j;
-        this.pelilauta[i][j] = new Kuusikulmio(paikkaIndeksi, x, y);
+        this.pelilauta[i][j] = new Kuusikulmio(paikkaIndeksi(i,j), Color.LIGHT_GRAY);
     }
 
     //Viisikulmion generoiva apumetodi, joka osallistuu laudan alustukseen
     private void luoViisikulmio(int i, int j, Color vari) {
+        this.pelilauta[i][j] = new Viisikulmio(paikkaIndeksi(i,j), vari);
     }
 
     /**
@@ -115,6 +121,10 @@ public class Pelilauta {
         int i = paikkaIndeksi / this.pelilauta.length;
         int j = paikkaIndeksi % this.pelilauta.length;
         return this.pelilauta[i][j];
+    }
+    
+    private int paikkaIndeksi(int i, int j) {
+        return pelilauta.length*i+j;
     }
 
     /**

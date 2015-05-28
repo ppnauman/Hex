@@ -6,24 +6,24 @@ import java.awt.Color;
 
 /**
  * Aliluokka kuvaa pelilaudan Viisikulmion. Viisikulmiot reunustavat pelilaudalla 
- * Kuusikulmaisia 'peliruutuja'.
+ * Kuusikulmaisia 'peliruutuja' toimien 'apuruutuina'. Viiskulmio tietää paikkansa pelilaudalla indeksin
+ * muodossa. Viisikulmioiden värit asetetaan luomishetkellä pelaajien värien mukaisiksi. Viiskulmion
+ * väriä ei pysty vaihtamaan asetaVari(Color uusiVari) -metodilla, kuten kuusikulmion.
  * 
  */
 public class Viisikulmio extends Monikulmio {
     
     
     /**
-     * Konstruktori luo uuden Viisikulmion, jonka 'bounding boxin'
-     * sijainti grafiikkakontekstissa on ilmaistu x- ja y-koordinaatteina.
-     * Lisäksi viisikulmio tietää paikkansa pelilaudalla indeksin muodossa.
-     * Viisikulmiolla on aina pelin pelaajaa vastaava väri.
+     * Konstruktori luo uuden Viisikulmion ja asettaa sille paikkatiedon ja värin.
      *
      * @param paikkaIndeksi sijainti pelilaudalla (0..ruutujen lkm-1)
-     * @param x komponentin absoluuttinen sijainti x-akselilla
-     * @param y komponentin absoluuttinen sijainti y-akselilla
      */
-    public Viisikulmio(int paikkaIndeksi, int x, int y, Color vari) {
-        super(paikkaIndeksi, x, y);
-        super.asetaVari(vari);
+    public Viisikulmio(int paikkaIndeksi, Color vari) {
+        super(paikkaIndeksi, vari);
+    }
+    
+    @Override
+    public void asetaVari(Color uusiVari) {
     }
 }

@@ -8,28 +8,20 @@ import java.awt.Graphics;
  */
 public abstract class Monikulmio {
     private int paikka;
-    private int x;
-    private int y;
     private Color vari;
-
     
     /**
      * Monikulmion konstruktori, jossa 
      *
      * @param paikkaIndeksi sijainti pelilaudalla (0..ruutujen km)
-     * @param x komponentin absoluuttinen sijainti x-akselilla
-     * @param y komponentin absoluuttinen sijainti y-akselilla
      */
-    public Monikulmio(int paikkaIndeksi, int x, int y) {
+    public Monikulmio(int paikkaIndeksi, Color vari) {
         this.paikka = paikkaIndeksi;
-        this.x = x;
-        this.y = y;
-        this.vari = Color.LIGHT_GRAY;
+        this.vari = vari;
     }
     
-
     /**
-     * Vaihtaa Monikulmion värin parametrina annetun Color-olion mukaiseksi.
+     * Vaihtaa monikulmion värin parametrina annetun Color-olion mukaiseksi.
      * 
      * @param uusiVari - uusi väri
      */
@@ -44,24 +36,6 @@ public abstract class Monikulmio {
      */
     public Color haeVari() {
         return this.vari;
-    }
-    
-    /**
-     * Palauttaa Monikulmion 'bounding boxin' absoluuttisen sijainnin x-akselilla.
-     *
-     * @return x-koordinaatti
-     */
-    public int haeX() {
-        return this.x;
-    }
-    
-     /**
-     * Palauttaa Monikulmion 'bounding boxin' absoluuttisen sijainnin y-akselilla.
-     * 
-     * @return y-koordinaatti
-     */
-    public int haeY() {
-        return this.y;
     }
     
     /**

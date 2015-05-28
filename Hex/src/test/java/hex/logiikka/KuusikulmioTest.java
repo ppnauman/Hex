@@ -20,9 +20,7 @@ public class KuusikulmioTest {
     
     @Before
     public void setUp() {
-        int[] x = {10,10,15,20,20,15,};
-        int[] y = {100,110,115,110,100,95,};
-        k = new Kuusikulmio(55, 0,0);
+        k = new Kuusikulmio(55, Color.LIGHT_GRAY);
     }
     
     @Test
@@ -32,8 +30,8 @@ public class KuusikulmioTest {
     
     @Test
     public void asetaVariToimii() {
-        k.asetaVari(Color.white);
-        assertEquals(Color.white, k.haeVari());
+        k.asetaVari(Color.WHITE);
+        assertEquals(Color.WHITE, k.haeVari());
     }
     
     @Test

@@ -12,6 +12,12 @@ public interface HexPinta {
     
     /**
      * 
+     * @return 
+     */
+    int laudanKoko();
+    
+    /**
+     * 
      * @param paikkaIndeksi
      * @param variNytVuorossa
      * @return 

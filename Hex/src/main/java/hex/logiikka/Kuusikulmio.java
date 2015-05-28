@@ -1,5 +1,7 @@
 package hex.logiikka;
 
+import java.awt.Color;
+
 
 /**
  * Pelilaudan Kuusikulmion eli 'peliruudun' kuvaava aliluokka.
@@ -18,10 +20,9 @@ public class Kuusikulmio extends Monikulmio {
      * @param x komponentin absoluuttinen sijainti x-akselilla
      * @param y komponentin absoluuttinen sijainti y-akselilla
      */
-    public Kuusikulmio(int paikkaIndeksi, int x, int y) {
+    public Kuusikulmio(int paikkaIndeksi, Color vari) {
         
-        super(paikkaIndeksi, x, y);
+        super(paikkaIndeksi, vari);
         
     }
-
 }

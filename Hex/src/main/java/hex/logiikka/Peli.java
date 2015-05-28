@@ -18,6 +18,7 @@ public class Peli implements HexPinta {
     public Peli(int pelinKoko, String nimi1, String nimi2, Color vari1, Color vari2) {
         this.tarkastaja = new Tarkastaja(pelinKoko);
         this.lauta = new Pelilauta(pelinKoko, vari1, vari2);
+        this.lauta.alustaLauta();
         this.pelaaja1 = new Pelaaja(nimi1, vari1);
         this.pelaaja2 = new Pelaaja(nimi2, vari2);
         this.vuorossa = this.pelaaja1;
@@ -41,6 +42,10 @@ public class Peli implements HexPinta {
      */
     public Color variNytVuorossa() {
         return this.vuorossa.haeVari();
+    }
+   
+    public int laudanKoko() {
+        return this.lauta.koko();
     }
 
     /**

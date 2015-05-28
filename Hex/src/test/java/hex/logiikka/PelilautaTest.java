@@ -33,16 +33,6 @@ public class PelilautaTest {
     }
     
     @Test
-    public void kuusikulmionXOikein() {
-        assertEquals(753, p.haeMonikulmio(7,10).haeX());
-    }
-    
-    @Test
-    public void kuusikulmionYOikein() {
-        assertEquals(144, p.haeMonikulmio(3,4).haeY());
-    }
-    
-    @Test
     public void asetaKulmioAsettaaVarinOikein() {
         p.asetaKulmio(29, Color.RED);
         assertEquals(Color.RED, p.haeKulmioIndeksilla(29).haeVari());

@@ -11,17 +11,18 @@ import javax.swing.JButton;
  * Kuusikulmaisen Swing JButtonin kuvaava aliluokka.
  * 
  */
-public class KuusikRuutu extends JButton {
+public class MonikRuutu extends JButton {
     
     private Polygon muoto;
     private Color vari;
     private int paikkaIndeksi;
     
     
-    public KuusikRuutu (int[] x, int[] y) {
+    public MonikRuutu (int paikkaIndeksi, Polygon muoto, Color vari) {
         super();
-        this.muoto = new Polygon(x,y,6);
-        this.vari = Color.LIGHT_GRAY;
+        this.paikkaIndeksi = paikkaIndeksi;
+        this.muoto = muoto;
+        this.vari = vari;
         setContentAreaFilled(false);
         setBorderPainted(false);  
     }
