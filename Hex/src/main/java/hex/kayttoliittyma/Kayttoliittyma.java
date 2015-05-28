@@ -186,7 +186,7 @@ public class Kayttoliittyma implements Runnable {
         info.setForeground(peli.variNytVuorossa());
         Font f = new Font("Sans",Font.BOLD, 14);
         info.setFont(f);
-        info.setBounds(60,72, 500, 28);
+        info.setBounds(60,82, 500, 28);
     }
     
     private int maaritaKulmionKork() {
