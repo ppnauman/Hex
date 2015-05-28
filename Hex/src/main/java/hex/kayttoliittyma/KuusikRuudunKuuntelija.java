@@ -25,7 +25,7 @@ public class KuusikRuudunKuuntelija implements MouseListener {
         tamaRuutu.repaint();
         this.peli.vaihdaVuoroa();
         this.info.setForeground(peli.variNytVuorossa());
-        this.info.setText(peli.nimiNytVuorossa()+" - your turn to make a move");
+        this.info.setText(peli.nimiNytVuorossa()+" - it's your move");
     }
     
    

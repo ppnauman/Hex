@@ -181,7 +181,7 @@ public class Kayttoliittyma implements Runnable {
     }
     
     private void luoInfo(Container container) {
-        info = new JLabel(peli.nimiNytVuorossa()+" - your turn to make a move");
+        info = new JLabel(peli.nimiNytVuorossa()+" - it's your move");
         container.add(info);
         info.setForeground(peli.variNytVuorossa());
         Font f = new Font("Sans",Font.BOLD, 14);
