@@ -44,6 +44,10 @@ public class MonikRuutu extends JButton {
         this.vari = uusiVari;
     }
     
+    public int haePaikkaIndeksi() {
+        return this.paikkaIndeksi;
+    }
+    
     @Override
     protected void paintComponent(Graphics graphics) {
         graphics.setColor(this.vari);

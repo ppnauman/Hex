@@ -181,12 +181,12 @@ public class Kayttoliittyma implements Runnable {
     }
     
     private void luoInfo(Container container) {
-        info = new JLabel(peli.nimiNytVuorossa()+" - it's your move");
+        info = new JLabel(peli.nimiNytVuorossa()+" – it's your move");
         container.add(info);
         info.setForeground(peli.variNytVuorossa());
         Font f = new Font("Sans",Font.BOLD, 14);
         info.setFont(f);
-        info.setBounds(60,82, 500, 28);
+        info.setBounds(60, 62, 500, 28);
     }
     
     private int maaritaKulmionKork() {
@@ -203,7 +203,7 @@ public class Kayttoliittyma implements Runnable {
     
     private Rectangle ruudunPaikka(int i, int j, int kork, int lev, int rako) {
         int x = 15 + i*(lev/2+rako/2) + j*(lev+rako);
-        int y = 100 + i*(kork/4*3+rako);
+        int y = 80 + i*(kork/4*3+rako);
         return new Rectangle (x, y, lev, kork);
     }
     

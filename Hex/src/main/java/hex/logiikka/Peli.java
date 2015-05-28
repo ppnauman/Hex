@@ -61,13 +61,13 @@ public class Peli implements HexPinta {
      */
     @Override
     public boolean asetaKuusikulmio(int paikkaIndeksi, Color variNytVuorossa) {
-        boolean ruutuVarattu = this.lauta.onkoRuutuVarattu(paikkaIndeksi);
-        if (!ruutuVarattu) {
+        boolean onkoVarattu = this.lauta.onkoRuutuVarattu(paikkaIndeksi);
+        if (!onkoVarattu) {
             ArrayList<Integer> yhdistettavatNaapurit = 
                     this.lauta.asetaKulmio(paikkaIndeksi, this.vuorossa.haeVari());
             this.tarkastaja.yhdistaUseatKetjut(paikkaIndeksi, yhdistettavatNaapurit);
         }
-        return ruutuVarattu;
+        return (!onkoVarattu);
     }
 
     /**

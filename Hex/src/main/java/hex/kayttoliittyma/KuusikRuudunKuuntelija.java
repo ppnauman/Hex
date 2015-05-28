@@ -21,11 +21,15 @@ public class KuusikRuudunKuuntelija implements MouseListener {
     @Override
     public void mousePressed (MouseEvent me) {
         MonikRuutu tamaRuutu = (MonikRuutu)me.getSource();
-        tamaRuutu.asetaVari(this.peli.variNytVuorossa());
-        tamaRuutu.repaint();
-        this.peli.vaihdaVuoroa();
-        this.info.setForeground(peli.variNytVuorossa());
-        this.info.setText(peli.nimiNytVuorossa()+" - it's your move");
+        if(peli.asetaKuusikulmio(tamaRuutu.haePaikkaIndeksi(), peli.variNytVuorossa())) {
+            tamaRuutu.asetaVari(this.peli.variNytVuorossa());
+            tamaRuutu.repaint();
+            peli.vaihdaVuoroa();
+            this.info.setForeground(peli.variNytVuorossa());
+            this.info.setText(peli.nimiNytVuorossa() + " – it's your move");
+        } else {
+            this.info.setText(peli.nimiNytVuorossa() + " – position occupied. Try again. ");
+        }   
     }
     
    
