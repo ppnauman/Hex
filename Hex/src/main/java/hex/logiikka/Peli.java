@@ -83,4 +83,16 @@ public class Peli implements HexPinta {
         if(voittaja == 2) return this.pelaaja2.haeNimi();
         return null;
     }
+    
+    public Color monikulmionVari(int paikkaIndeksi) {
+        return this.lauta.haeKulmioIndeksilla(paikkaIndeksi).haeVari();
+    }
+    
+    public Color pelaaja1vari() {
+        return this.pelaaja1.haeVari();
+    }
+    
+    public Color pelaaja2vari() {
+        return this.pelaaja2.haeVari();
+    }
 }

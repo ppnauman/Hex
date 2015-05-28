@@ -62,7 +62,7 @@ public class Kayttoliittyma implements Runnable {
     ja sijoittaa ikkunan keskelle näyttöä.*/
     private void asetaKehyksenPaikka (JFrame kehys) {
         int korkeus = (int)naytonKoko.height/10*9;
-        int leveys = (int)naytonKoko.width/10*8;
+        int leveys = korkeus/10*13;
         int y = naytonKoko.height/20;
         int x = naytonKoko.width/10;
         kehys.setLocation(x, y);
@@ -77,23 +77,39 @@ public class Kayttoliittyma implements Runnable {
         Polygon oikViisik = oikViisik(lev, kork);
         Polygon alaViisik = alaViisik(lev, kork);
         Polygon ylaViisik = ylaViisik(lev, kork);
+        Polygon vasYlakulma = vasYlakulma(lev,kork);
+        Polygon vasAlakulma = vasAlakulma(lev,kork);
+        Polygon oikYlakulma = oikYlakulma(lev,kork);
+        Polygon oikAlakulma = oikAlakulma(lev,kork);
         
         //luodaan kulmikkaat JButton-objektit
         int paikka = 0;
         for (int i = 0; i < peli.laudanKoko(); i++) {
             for (int j = 0; j < peli.laudanKoko(); j++) {
                 MonikRuutu ruutu;
-                if(j==0) {
-                    ruutu = new MonikRuutu(paikka, vasViisik, Color.BLUE);
+                if(i==0 && j==0 ) {
+                    ruutu = new MonikRuutu(paikka, vasYlakulma, peli.pelaaja1vari());
+                }
+                else if(i==peli.laudanKoko()-1 && j==0) {
+                    ruutu = new MonikRuutu(paikka, vasAlakulma, peli.pelaaja1vari());
+                }
+                else if(i==0 && j==peli.laudanKoko()-1) {
+                    ruutu = new MonikRuutu(paikka, oikYlakulma, peli.pelaaja1vari());
+                }
+                else if(i==peli.laudanKoko()-1 && j==peli.laudanKoko()-1) {
+                    ruutu = new MonikRuutu(paikka, oikAlakulma, peli.pelaaja1vari());
+                }
+                else if(j==0) {
+                    ruutu = new MonikRuutu(paikka, vasViisik, peli.pelaaja1vari());
                 }
                 else if(j==peli.laudanKoko()-1) {
-                    ruutu = new MonikRuutu(paikka, oikViisik, Color.BLUE);
+                    ruutu = new MonikRuutu(paikka, oikViisik, peli.pelaaja1vari());
                 }
                 else if(i==0) {
-                    ruutu = new MonikRuutu(paikka, ylaViisik, Color.RED);
+                    ruutu = new MonikRuutu(paikka, ylaViisik, peli.pelaaja2vari());
                 }
                 else if(i==peli.laudanKoko()-1) {
-                    ruutu = new MonikRuutu(paikka, alaViisik, Color.RED);
+                    ruutu = new MonikRuutu(paikka, alaViisik, peli.pelaaja2vari());
                 }
                 else {
                     ruutu = new MonikRuutu(paikka, kuusik, Color.LIGHT_GRAY);
@@ -134,6 +150,30 @@ public class Kayttoliittyma implements Runnable {
         int[] x = { 0, 0, leveys, leveys, leveys/2, };
         int[] y = { korkeus/4*3, korkeus/4, korkeus/4, korkeus/4*3, korkeus };
         return new Polygon(x, y, 5);
+    }
+    
+    private Polygon vasYlakulma(int leveys, int korkeus) {
+        int[] x = { leveys, leveys, leveys/2,};
+        int[] y = { korkeus/4, korkeus-korkeus/4, korkeus };
+        return new Polygon(x, y, 3);
+    }
+    
+    private Polygon vasAlakulma(int leveys, int korkeus) {
+        int[] x = { 0, leveys/2, leveys, leveys, };
+        int[] y = { korkeus/4, 0, korkeus/4, korkeus-korkeus/4, };
+        return new Polygon(x, y, 4);
+    }
+    
+    private Polygon oikYlakulma(int leveys, int korkeus) {
+        int[] x = { 0, 0, leveys, leveys/2,};
+        int[] y = { korkeus-korkeus/4, korkeus/4, korkeus-korkeus/4, korkeus };
+        return new Polygon(x, y, 4);
+    }
+    
+    private Polygon oikAlakulma(int leveys, int korkeus) {
+        int[] x = { 0, 0, leveys/2, };
+        int[] y = { korkeus-korkeus/4, korkeus/4, 0, };
+        return new Polygon(x, y, 3);
     }
     
     private int maaritaKulmionKork() {

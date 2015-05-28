@@ -15,8 +15,8 @@ public class Hex {
     
     public static void main (String[] args) {
 
-        // KOKEILUA laudan piirtämiseksi ja JButtonin muokkaamiseksi
-        HexPinta peli = new Peli(11,"PietHein", "JohnForbesNash", Color.RED, Color.BLUE);
+        
+        HexPinta peli = new Peli(11,"PietHein", "JohnForbesNash", Color.GREEN, Color.WHITE);
         Kayttoliittyma kayttoliittyma = new Kayttoliittyma(peli);
         SwingUtilities.invokeLater(kayttoliittyma);
                 
