@@ -42,12 +42,40 @@ public class PeliTest {
     }
     
     @Test
-    public void voittajanTarkistusTesti() {
-        
+    public void tarkistaVoittajaTesti1() {
+        for(int i = 27; i < 38; i++) {
+            p.asetaKuusikulmio(i, p.variNytVuorossa());
+            p.vaihdaVuoroa();
+            p.asetaKuusikulmio(i+13, p.variNytVuorossa());
+            p.vaihdaVuoroa();
+        }
+        assertEquals("VladimirPutin", p.tarkistaVoittaja());
     }
     
     @Test
-    public void asetaKuusikulmioTesti() {
+    public void tarkistaVoittajaTesti2() {
+        for (int i= 14; i<145; i+=13) {
+            p.asetaKuusikulmio(i, p.variNytVuorossa());
+            p.vaihdaVuoroa();
+            p.asetaKuusikulmio(i+1, p.variNytVuorossa());
+            p.vaihdaVuoroa();
+        }
+        assertEquals("JohnForbesNash", p.tarkistaVoittaja());
+    }
+    
+    @Test
+    public void tarkistaVoittajaTesti3() {
+        for(int i = 27; i < 37; i++) {
+            p.asetaKuusikulmio(i, p.variNytVuorossa());
+            p.vaihdaVuoroa();
+            p.asetaKuusikulmio(i+13, p.variNytVuorossa());
+            p.vaihdaVuoroa();
+        }
+        assertEquals(null, p.tarkistaVoittaja());
+    }
+    
+    @Test
+    public void asetaKuusikulmioTesti1Vari() {
         
     }
 }
