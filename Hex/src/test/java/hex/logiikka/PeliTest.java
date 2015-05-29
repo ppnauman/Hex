@@ -117,5 +117,10 @@ public class PeliTest {
         assertEquals(Color.WHITE, p.pelaaja2vari());
     }
     
+    @Test
+    public void laudanKokoTesti() {
+        assertEquals(13, p.laudanKoko());
+    }
+    
     
 }
