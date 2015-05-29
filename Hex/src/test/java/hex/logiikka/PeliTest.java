@@ -34,6 +34,22 @@ public class PeliTest {
     }
     
     @Test
+    public void nimiNytVuorossaTesti() {
+        assertEquals("VladimirPutin", p.nimiNytVuorossa());
+    }
+    
+    @Test
+    public void monikulmionVariTesti1() {
+        assertEquals(Color.LIGHT_GRAY, p.monikulmionVari(55));
+    }
+    
+    @Test
+    public void monikulmionVariTesti2() {
+        p.asetaKuusikulmio(30, Color.RED);
+        assertEquals(Color.RED, p.monikulmionVari(30));
+    }
+    
+    @Test
     public void vaihdaVuoroaTesti() {
         for(int i=0; i<5; i++) {
             p.vaihdaVuoroa();
@@ -75,7 +91,31 @@ public class PeliTest {
     }
     
     @Test
-    public void asetaKuusikulmioTesti1Vari() {
-        
+    public void asetaKuusikulmioAsettaaVarin() {
+        p.asetaKuusikulmio(29, p.variNytVuorossa());
+        assertEquals(p.monikulmionVari(29), p.variNytVuorossa());
     }
+    
+    @Test
+    public void asetaKuusikulmioPalauttaaOikeinRuutuVapaa() {
+        assertEquals(true, p.asetaKuusikulmio(30, Color.RED));
+    }
+    
+    @Test
+    public void asetaKuusikulmioPalauttaaOikeinRuutuVarattu() {
+        p.asetaKuusikulmio(30, Color.YELLOW);
+        assertEquals(false, p.asetaKuusikulmio(30,Color.GREEN));
+    }
+    
+    @Test
+    public void pelaaja1variTesti() {
+        assertEquals(Color.RED, p.pelaaja1vari());
+    }
+    
+    @Test
+    public void pelaaja2variTesti() {
+        assertEquals(Color.WHITE, p.pelaaja2vari());
+    }
+    
+    
 }

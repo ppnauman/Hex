@@ -70,8 +70,8 @@ public class Pelilauta {
      * @param paikkaIndeksi
      * @return true = varattu, false = vapaa
      */
-    public boolean onkoRuutuVarattu(int paikkaIndeksi) {
-        return (this.haeKulmioIndeksilla(paikkaIndeksi).haeVari() != Color.LIGHT_GRAY);
+    public boolean onkoRuutuVapaa(int paikkaIndeksi) {
+        return (this.haeKulmioIndeksilla(paikkaIndeksi).haeVari() == Color.LIGHT_GRAY);
     }
 
     /**

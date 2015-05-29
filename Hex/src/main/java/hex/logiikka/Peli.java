@@ -27,6 +27,7 @@ public class Peli implements HexPinta {
     /**
      * Vaihtaa vuoron pelaajalta toiselle.
      */
+    @Override
     public void vaihdaVuoroa() {
         if (this.vuorossa == this.pelaaja1) {
             this.vuorossa = pelaaja2;
@@ -40,10 +41,12 @@ public class Peli implements HexPinta {
      *
      * @return väri
      */
+    @Override
     public Color variNytVuorossa() {
         return this.vuorossa.haeVari();
     }
    
+    @Override
     public int laudanKoko() {
         return this.lauta.koko();
     }
@@ -61,13 +64,13 @@ public class Peli implements HexPinta {
      */
     @Override
     public boolean asetaKuusikulmio(int paikkaIndeksi, Color variNytVuorossa) {
-        boolean onkoVarattu = this.lauta.onkoRuutuVarattu(paikkaIndeksi);
-        if (!onkoVarattu) {
+        boolean onkoVapaa = this.lauta.onkoRuutuVapaa(paikkaIndeksi);
+        if (onkoVapaa) {
             ArrayList<Integer> yhdistettavatNaapurit = 
                     this.lauta.asetaKulmio(paikkaIndeksi, this.vuorossa.haeVari());
             this.tarkastaja.yhdistaUseatKetjut(paikkaIndeksi, yhdistettavatNaapurit);
         }
-        return (!onkoVarattu);
+        return onkoVapaa;
     }
 
     /**
@@ -77,6 +80,7 @@ public class Peli implements HexPinta {
      *
      * @return voittajan nimi
      */
+    @Override
     public String tarkistaVoittaja() {
         int voittaja = this.tarkastaja.voittajanTarkistus();
         if(voittaja == 1) return this.pelaaja1.haeNimi();
@@ -84,18 +88,22 @@ public class Peli implements HexPinta {
         return null;
     }
     
+    @Override
     public Color monikulmionVari(int paikkaIndeksi) {
         return this.lauta.haeKulmioIndeksilla(paikkaIndeksi).haeVari();
     }
     
+    @Override
     public Color pelaaja1vari() {
         return this.pelaaja1.haeVari();
     }
     
+    @Override
     public Color pelaaja2vari() {
         return this.pelaaja2.haeVari();
     }
     
+    @Override
     public String nimiNytVuorossa() {
         return this.vuorossa.haeNimi();
     }

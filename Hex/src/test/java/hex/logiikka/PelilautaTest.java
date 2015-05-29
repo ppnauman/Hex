@@ -39,14 +39,14 @@ public class PelilautaTest {
     }
     
     @Test
-    public void onkoRuutuVarattuToimiiEiVarattu() {
-        assertEquals(false, p.onkoRuutuVarattu(55));
+    public void onkoRuutuVapaaToimiiOnVapaa() {
+        assertEquals(true, p.onkoRuutuVapaa(55));
     }
     
     @Test
-    public void onkoRuutuVarattuToimiiOnVarattu() {
+    public void onkoRuutuVapaaToimiiEiVapaa() {
         p.asetaKulmio(55, Color.RED);
-        assertEquals(true, p.onkoRuutuVarattu(55));
+        assertEquals(false, p.onkoRuutuVapaa(55));
     }
     
     @Test
