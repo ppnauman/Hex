@@ -7,6 +7,7 @@ import java.awt.Color;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import javax.swing.JLabel;
+import javax.swing.SwingUtilities;
 
 public class KuusikRuudunKuuntelija implements MouseListener {
     
@@ -24,12 +25,19 @@ public class KuusikRuudunKuuntelija implements MouseListener {
         if(peli.asetaKuusikulmio(tamaRuutu.haePaikkaIndeksi(), peli.variNytVuorossa())) {
             tamaRuutu.asetaVari(this.peli.variNytVuorossa());
             tamaRuutu.repaint();
+            
+            String voittaja = peli.tarkistaVoittaja();
+            if ( voittaja != null) {
+                PeliPaattynyt peliPaattynyt = new PeliPaattynyt(voittaja, peli.variNytVuorossa());
+                SwingUtilities.invokeLater(peliPaattynyt);
+            }
+            
             peli.vaihdaVuoroa();
             this.info.setForeground(peli.variNytVuorossa());
             this.info.setText(peli.nimiNytVuorossa() + " – it's your move");
         } else {
             this.info.setText(peli.nimiNytVuorossa() + " – position occupied. Try again. ");
-        }   
+        }
     }
     
    
