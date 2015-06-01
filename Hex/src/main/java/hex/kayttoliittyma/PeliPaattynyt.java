@@ -54,17 +54,27 @@ public class PeliPaattynyt implements Runnable {
         
         JLabel viesti = new JLabel(voittaja + " you've won the game!");
         viesti.setHorizontalAlignment(SwingConstants.CENTER);
+        viesti.setVerticalAlignment(SwingConstants.CENTER);
         viesti.setForeground(vari);
+        
+        
+        c.fill=GridBagConstraints.BOTH;
         
         c.gridx=0;
         c.gridy=0;
         c.gridwidth=3;
+        c.weightx=1.0;
+        c.weighty=1.0;
         container.add(viesti, c);
         
         JButton uusiPeli = new JButton("PlayAgain");
+        c.fill=GridBagConstraints.HORIZONTAL;
+        c.weighty=0.0;
+        c.ipady=0;
         c.gridx=0;
         c.gridy=1;
         c.gridwidth=1;
+        c.anchor=GridBagConstraints.PAGE_END;
         container.add(uusiPeli, c);
         
         JButton tilasto = new JButton("ShowStats");
