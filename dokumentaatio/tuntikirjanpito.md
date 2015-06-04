@@ -49,3 +49,15 @@
 
 ###28.5.15
  4:00 Käyttöliittymä, Peli.java testejä, KäLin suunnittelua 
+
+###30.5.15
+ 2:00 PeliPaattynyt.java ikkuna
+
+###31.5.15
+ 1:00 PeliPaattynyt.java GridBagLayout (GUIBuilderiin en silti nöyrry..)
+
+###3.5.15
+ 0:30 PeliAlkaa.java ikkunan aloittelua
+
+###4.5.15
+ 1:00 Sekvenssiokaavion tekoa draw.io:ssa, mutta eihän siitä vielä ajoissa tullu valmista. Ensi viikolla sitten enemmän kaavioita, tää meni pitkälti töissä. 

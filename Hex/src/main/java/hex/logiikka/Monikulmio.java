@@ -4,7 +4,7 @@ import java.awt.Color;
 import java.awt.Graphics;
 
 /**
- * Yliluokka kuvaa pelilaudan monikulmiota.
+ * Yliluokka, joka kuvaa pelilaudan monikulmiota.
  */
 public abstract class Monikulmio {
     private int paikka;

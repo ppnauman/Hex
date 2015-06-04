@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 /**
  * Luokka tarkkailee pelin ratkeamista eli laudan reunalta toiselle ulottuvan
- * 6-kulmioiden ketjun muodostumista union-find rakenteen avulla.
+ * samanväristen 6-kulmioiden ketjun muodostumista union-find tietorakenteen avulla.
  */
 public class Tarkastaja {
 

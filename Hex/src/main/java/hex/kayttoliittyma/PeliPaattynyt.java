@@ -1,11 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package hex.kayttoliittyma;
 
-import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.Dimension;
@@ -18,9 +13,11 @@ import javax.swing.SwingConstants;
 import javax.swing.WindowConstants;
 
 /**
- *
- * @author perttu
+ *Pelin ratkettua avautuva graafinen ikkuna, jossa pelaajan on mahdollista
+ * valita haluaako hän aloittaa uuden pelin, tarkastella pelaajakohtaisia
+ * tilastoja vai poistua ohjelmasta.
  */
+
 public class PeliPaattynyt implements Runnable {
     private JFrame kehys;
     private String voittaja;

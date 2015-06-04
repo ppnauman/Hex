@@ -8,8 +8,10 @@ import java.awt.Polygon;
 import javax.swing.JButton;
 
 /**
- * Kuusikulmaisen Swing JButtonin kuvaava aliluokka.
- * 
+ * Muodoltaan monikulmaisen Swing JButtonin kuvaava aliluokka. Kuusikulmaisia
+ * JButton -olioita käytetään kuvaamaan käyttöliittymässä pelilaudan kuusikulmaisia
+ * peliruutuja. Viiskulmaista ruutua käytetään pelilaudan reunustoilla. Lisäksi kolmi-
+ * ja nelikulmaisia ruutuja käytetään käyttöliittymässä pelilaudan kulmapaikoissa.
  */
 public class MonikRuutu extends JButton {
     
