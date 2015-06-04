@@ -1,6 +1,6 @@
 ##Projektiin käytetty aika (hh:min)
 
-###Yhteensä: 42:00
+###Yhteensä: 46:30
 
 ###11.5.15
  2:00 gitiin tutustumista, repositorion luonti, aiheen kuvaus, tuntikirjanpito
