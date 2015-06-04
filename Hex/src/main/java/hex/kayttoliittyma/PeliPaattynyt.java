@@ -13,8 +13,9 @@ import javax.swing.SwingConstants;
 import javax.swing.WindowConstants;
 
 /**
- *Pelin ratkettua avautuva graafinen ikkuna, jossa pelaajan on mahdollista
- * valita haluaako hän aloittaa uuden pelin, tarkastella pelaajakohtaisia
+ *Pelin ratkettua avautuva graafinen ikkuna, joka ilmoittaa pelin voittajan.
+ * Pelaajan on mahdollista valita haluaako hän aloittaa uuden pelin,
+ * tarkastella pelaajakohtaisia
  * tilastoja vai poistua ohjelmasta.
  */
 
