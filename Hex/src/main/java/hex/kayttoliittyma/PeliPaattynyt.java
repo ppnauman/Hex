@@ -83,11 +83,12 @@ public class PeliPaattynyt implements Runnable {
         c.gridwidth=1;
         container.add(tilasto, c);
         
-        JButton poistu = new JButton("Exit");
+        JButton lopetus = new JButton("Exit");
+        lopetus.addActionListener(new LopetusKuuntelija());
         c.gridx=2;
         c.gridy=1;
         c.gridwidth=1;
-        container.add(poistu, c);
+        container.add(lopetus, c);
         
         
    
