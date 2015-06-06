@@ -5,7 +5,7 @@ import java.awt.Color;
 
 
 /**
- * API joka tulee määrittelemään pelilogiikan käyttöliittymälle näkyvät metodit
+ * API, joka määrittelee pelilogiikasta käyttöliittymälle näkyvät metodit.
  * 
  */
 public interface HexPinta {

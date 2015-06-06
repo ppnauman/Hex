@@ -1,8 +1,5 @@
-/**
- * Pelin pääikkuna.
- *
- * @author ppnauman
- */
+
+
 package hex.kayttoliittyma;
 
 import hex.logiikka.HexPinta;
@@ -15,6 +12,10 @@ import java.awt.Rectangle;
 import java.awt.Toolkit;
 import javax.swing.*;
 
+/**
+ *Pelin pääikkuna, johon piirtyy ja päivittyy kuva pelilaudasta.
+ *Pelaajat lisäävät vuorollaan pelilaudalle kuusikulmioita hiiren avulla.
+ */
 public class Kayttoliittyma implements Runnable {
 
     private JFrame kehys;
@@ -63,7 +64,7 @@ public class Kayttoliittyma implements Runnable {
     
     
     /*asettaa peli-ikkunan leveydeksi 80% näytön leveydestä, korkeudeksi 90% näytön korkeudesta
-    ja sijoittaa ikkunan keskelle näyttöä.*/
+    ja sijoittaa peli-ikkunan keskelle näyttöä.*/
     private void asetaKehyksenPaikka (JFrame kehys) {
         int korkeus = (int)naytonKoko.height/10*9;
         int leveys = korkeus/10*13;
@@ -72,6 +73,7 @@ public class Kayttoliittyma implements Runnable {
         kehys.setLocation(x, y);
         kehys.setPreferredSize(new Dimension(leveys,korkeus));
     }
+    
     
     private void luoMonikulmiot(Container container, int lev, int kork, int rako) {
                 
@@ -86,7 +88,7 @@ public class Kayttoliittyma implements Runnable {
         Polygon oikYlakulma = oikYlakulma(lev,kork);
         Polygon oikAlakulma = oikAlakulma(lev,kork);
         
-        //luodaan kulmikkaat JButton-objektit
+        //luodaan kulmikkaat JButton-objektit, yksi jokaista laudan peliruutua kohti.
         int paikka = 0;
         for (int i = 0; i < peli.laudanKoko(); i++) {
             for (int j = 0; j < peli.laudanKoko(); j++) {
@@ -197,7 +199,7 @@ public class Kayttoliittyma implements Runnable {
             return 48;
         }
         else {
-            return 40;
+            return 36;
         }
     }
     

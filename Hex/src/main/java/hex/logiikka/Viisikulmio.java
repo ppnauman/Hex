@@ -7,7 +7,7 @@ import java.awt.Color;
 /**
  * Aliluokka kuvaa pelilaudan Viisikulmion. Viisikulmiot reunustavat pelilaudalla 
  * Kuusikulmaisia 'peliruutuja' toimien 'apuruutuina'. Viiskulmio tietää paikkansa pelilaudalla indeksin
- * muodossa. Viisikulmioiden värit asetetaan luomishetkellä pelaajien värien mukaisiksi. Viiskulmion
+ * muodossa. Viisikulmioiden värit asetetaan luomishetkellä pelaajien värien mukaisiksi. Viisikulmion
  * väriä ei pysty vaihtamaan asetaVari(Color uusiVari) -metodilla, kuten kuusikulmion.
  * 
  */
