@@ -6,7 +6,7 @@ import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
-import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
@@ -52,8 +52,16 @@ public class PeliAlkaa implements Runnable {
         
         
         JTextField nimiKentta1 = new JTextField("");
+        Dimension tekstikentanKoko = new Dimension(250,25);
+        nimiKentta1.setPreferredSize(tekstikentanKoko);
         c.gridy=1;
         container.add(nimiKentta1,c);
+
+        String[] varit = { "Red", "Blue", "White", "Green", "Pink", "Yellow", "Cyan", "Brown" };
+        JComboBox varikentta1 = new JComboBox(varit);
+        varikentta1.setPreferredSize(tekstikentanKoko);
+        c.gridy=2;
+        container.add(varikentta1, c);
         
         JLabel nimiPelaaja2 = new JLabel("Player 2 name: ");
         nimiPelaaja2.setHorizontalAlignment(SwingConstants.CENTER);
@@ -63,6 +71,7 @@ public class PeliAlkaa implements Runnable {
         container.add(nimiPelaaja2,c);
         
         JTextField nimiKentta2 = new JTextField("");
+        nimiKentta2.setPreferredSize(tekstikentanKoko);
         c.gridy=4;
         container.add(nimiKentta2,c);
         

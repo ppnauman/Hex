@@ -6,6 +6,7 @@ import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.awt.Toolkit;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -23,6 +24,7 @@ public class PeliPaattynyt implements Runnable {
     private JFrame kehys;
     private String voittaja;
     private Color vari;
+    private Kayttoliittyma kayttis;
 
     public PeliPaattynyt(String voittaja, Color vari) {
         this.voittaja = voittaja;
@@ -32,7 +34,7 @@ public class PeliPaattynyt implements Runnable {
     @Override
     public void run() {
         kehys = new JFrame("Game Over");
-        kehys.setPreferredSize(new Dimension(400, 200));
+        asetaKehyksenPaikka();
         kehys.setLayout(new GridBagLayout());
         kehys.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
       
@@ -87,8 +89,15 @@ public class PeliPaattynyt implements Runnable {
         c.gridy=1;
         c.gridwidth=1;
         container.add(lopetus, c);
-        
-        
-   
     }
+    
+    private void asetaKehyksenPaikka() {
+        Dimension naytonKoko = Toolkit.getDefaultToolkit().getScreenSize();
+        int y = (naytonKoko.height-200)/2;
+        int x = (naytonKoko.width-400)/2;
+        kehys.setLocation(x, y);
+        kehys.setPreferredSize(new Dimension(400,200));
+    }
+   
+    
 }

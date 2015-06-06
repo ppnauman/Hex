@@ -4,8 +4,10 @@ package hex.kayttoliittyma;
 
 import hex.logiikka.HexPinta;
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.SwingUtilities;
 
@@ -19,11 +21,11 @@ import javax.swing.SwingUtilities;
 public class KuusikRuudunKuuntelija implements MouseListener {
     
     private HexPinta peli;
-    private JLabel info;
+    private Kayttoliittyma kayttis;
     
-    public KuusikRuudunKuuntelija(HexPinta peli, JLabel info) {
+    public KuusikRuudunKuuntelija(HexPinta peli, Kayttoliittyma kayttis) {
         this.peli = peli;
-        this.info = info;
+        this.kayttis = kayttis;
     }
     
     @Override
@@ -32,18 +34,17 @@ public class KuusikRuudunKuuntelija implements MouseListener {
         if(peli.asetaKuusikulmio(tamaRuutu.haePaikkaIndeksi(), peli.variNytVuorossa())) {
             tamaRuutu.asetaVari(this.peli.variNytVuorossa());
             tamaRuutu.repaint();
-            
             String voittaja = peli.tarkistaVoittaja();
             if ( voittaja != null) {
                 PeliPaattynyt peliPaattynyt = new PeliPaattynyt(voittaja, peli.variNytVuorossa());
                 SwingUtilities.invokeLater(peliPaattynyt);
+                this.kayttis.poistaKuuntelijat();
             }
-            
             peli.vaihdaVuoroa();
-            this.info.setForeground(peli.variNytVuorossa());
-            this.info.setText(peli.nimiNytVuorossa() + " – it's your move");
+            this.kayttis.haeInfo().setForeground(peli.variNytVuorossa());
+            this.kayttis.haeInfo().setText(peli.nimiNytVuorossa() + " – it's your move.");
         } else {
-            this.info.setText(peli.nimiNytVuorossa() + " – position occupied. Try again. ");
+            this.kayttis.haeInfo().setText(peli.nimiNytVuorossa() + " – position occupied. Try again. ");
         }
     }
     

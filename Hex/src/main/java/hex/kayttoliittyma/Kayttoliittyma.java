@@ -4,12 +4,14 @@ package hex.kayttoliittyma;
 
 import hex.logiikka.HexPinta;
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Polygon;
 import java.awt.Rectangle;
 import java.awt.Toolkit;
+import java.awt.event.MouseListener;
 import javax.swing.*;
 
 /**
@@ -22,6 +24,7 @@ public class Kayttoliittyma implements Runnable {
     private HexPinta peli;
     private Dimension naytonKoko;
     private JLabel info;
+    private MouseListener ruudunKuuntelija;
 
     public Kayttoliittyma(HexPinta peli) {
         this.peli = peli;
@@ -90,6 +93,7 @@ public class Kayttoliittyma implements Runnable {
         
         //luodaan kulmikkaat JButton-objektit, yksi jokaista laudan peliruutua kohti.
         int paikka = 0;
+        ruudunKuuntelija = new KuusikRuudunKuuntelija(this.peli, this);
         for (int i = 0; i < peli.laudanKoko(); i++) {
             for (int j = 0; j < peli.laudanKoko(); j++) {
                 MonikRuutu ruutu;
@@ -119,7 +123,7 @@ public class Kayttoliittyma implements Runnable {
                 }
                 else {
                     ruutu = new MonikRuutu(paikka, kuusik, Color.LIGHT_GRAY);
-                    ruutu.addMouseListener(new KuusikRuudunKuuntelija(this.peli, this.info));
+                    ruutu.addMouseListener(ruudunKuuntelija);
                 }
                 container.add(ruutu);
                 ruutu.setBounds(ruudunPaikka(i, j, kork, lev, rako));
@@ -207,6 +211,20 @@ public class Kayttoliittyma implements Runnable {
         int x = 15 + i*(lev/2+rako/2) + j*(lev+rako);
         int y = 80 + i*(kork/4*3+rako);
         return new Rectangle (x, y, lev, kork);
+    }
+    
+    public void poistaKuuntelijat() {
+        Component[] komp = this.kehys.getContentPane().getComponents();
+        for(int i=0; i<komp.length; i++) {
+            komp[i].removeMouseListener(ruudunKuuntelija);
+        }
+    }
+    
+    
+    //palauttaa info JLabelin
+    
+    public JLabel haeInfo() {
+        return this.info;
     }
     
     //palauttaa JFrame -kehysolion
