@@ -16,11 +16,7 @@ public class Hex {
     public static void main (String[] args) {
 
         
-        HexPinta peli = new Peli(11,"PietHein", "JohnForbesNash", Color.GREEN, Color.WHITE);
-        Kayttoliittyma kayttoliittyma = new Kayttoliittyma(peli);
-        SwingUtilities.invokeLater(kayttoliittyma);
-        PeliAlkaa alkuIkkuna = new PeliAlkaa();
-        SwingUtilities.invokeLater(alkuIkkuna);
+        SwingUtilities.invokeLater(new PeliAlkaa());
                 
     }
 }

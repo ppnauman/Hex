@@ -71,8 +71,8 @@ public class Kayttoliittyma implements Runnable {
     private void asetaKehyksenPaikka (JFrame kehys) {
         int korkeus = (int)naytonKoko.height/10*9;
         int leveys = korkeus/10*13;
-        int y = naytonKoko.height/20;
-        int x = naytonKoko.width/10;
+        int y = (naytonKoko.height-korkeus)/2;
+        int x = (naytonKoko.width-leveys)/2;
         kehys.setLocation(x, y);
         kehys.setPreferredSize(new Dimension(leveys,korkeus));
     }
