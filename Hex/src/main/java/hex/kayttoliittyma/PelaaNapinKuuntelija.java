@@ -6,6 +6,7 @@ import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JComboBox;
+import javax.swing.JFrame;
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 
@@ -19,8 +20,11 @@ public class PelaaNapinKuuntelija implements ActionListener {
     private JTextField nimiKentta2;
     private JComboBox varikentta1;
     private JComboBox varikentta2;
+    private JFrame kehys;
     
-    public PelaaNapinKuuntelija(JTextField nimiKentta1, JTextField nimiKentta2, JComboBox varikentta1, JComboBox varikentta2) {
+    public PelaaNapinKuuntelija(JFrame kehys, JTextField nimiKentta1, JTextField nimiKentta2, JComboBox varikentta1, JComboBox varikentta2) {
+        
+        this.kehys = kehys;
         this.nimiKentta1 = nimiKentta1;
         this.nimiKentta2 = nimiKentta2;
         this.varikentta1 = varikentta1;
@@ -33,6 +37,7 @@ public class PelaaNapinKuuntelija implements ActionListener {
                 vari((String)varikentta2.getSelectedItem()));
         Kayttoliittyma kayttoliittyma = new Kayttoliittyma(peli);
         SwingUtilities.invokeLater(kayttoliittyma);
+        kehys.dispose();
     }
 
     private Color vari(String variMerkkijono) {

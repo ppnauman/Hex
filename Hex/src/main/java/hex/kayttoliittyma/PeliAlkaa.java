@@ -7,6 +7,7 @@ import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
+import java.awt.Toolkit;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -100,15 +101,23 @@ public class PeliAlkaa implements Runnable {
         
         JButton pelaa = new JButton("Play");
         pelaa.setPreferredSize(new Dimension(tekstikentanKoko));
-        pelaa.addActionListener(new PelaaNapinKuuntelija(nimiKentta1, nimiKentta2, varikentta1, varikentta2));
+        pelaa.addActionListener(new PelaaNapinKuuntelija(kehys, nimiKentta1, nimiKentta2, varikentta1, varikentta2));
         c.insets=new Insets(20,100,20,100);
         c.gridy=7;
         container.add(pelaa, c);
         
         
-        
+        asetaKehyksenPaikka();
     
         
    
+    }
+    
+    private void asetaKehyksenPaikka() {
+       Dimension naytonKoko = Toolkit.getDefaultToolkit().getScreenSize();
+       int x = (naytonKoko.width-400)/2;
+       int y = (naytonKoko.height-400)/2;
+       this.kehys.setLocation(x,y);
+        
     }
 }
