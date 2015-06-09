@@ -36,7 +36,7 @@ public class KuusikRuudunKuuntelija implements MouseListener {
             tamaRuutu.repaint();
             String voittaja = peli.tarkistaVoittaja();
             if ( voittaja != null) {
-                PeliPaattynyt peliPaattynyt = new PeliPaattynyt(voittaja, peli.variNytVuorossa());
+                PeliPaattynyt peliPaattynyt = new PeliPaattynyt(voittaja, peli.variNytVuorossa(), this.kayttis.haeKehys());
                 SwingUtilities.invokeLater(peliPaattynyt);
                 this.kayttis.poistaKuuntelijat();
             }

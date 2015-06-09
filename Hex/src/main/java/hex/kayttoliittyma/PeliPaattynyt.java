@@ -22,13 +22,15 @@ import javax.swing.WindowConstants;
 
 public class PeliPaattynyt implements Runnable {
     private JFrame kehys;
+    private JFrame peli;
     private String voittaja;
     private Color vari;
     private Kayttoliittyma kayttis;
 
-    public PeliPaattynyt(String voittaja, Color vari) {
+    public PeliPaattynyt(String voittaja, Color vari, JFrame peli) {
         this.voittaja = voittaja;
         this.vari = vari;
+        this.peli = peli;
     }
 
     @Override
@@ -68,6 +70,7 @@ public class PeliPaattynyt implements Runnable {
         container.add(viesti, c);
         
         JButton uusiPeli = new JButton("PlayAgain");
+        uusiPeli.addActionListener(new UudelleenNapinKuuntelija(this.peli, this.kehys));
         c.fill=GridBagConstraints.HORIZONTAL;
         c.weighty=0.0;
         c.ipady=0;
