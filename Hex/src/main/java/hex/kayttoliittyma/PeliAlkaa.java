@@ -23,12 +23,13 @@ import javax.swing.text.PlainDocument;
  * syöttävät pelaajanimensä ja valitsevat haluamansa värin.
  */
 public class PeliAlkaa implements Runnable {
+    
     private JFrame kehys;
     
     @Override
     public void run() {
         kehys = new JFrame("Game of Hex ***new game***");
-        kehys.setPreferredSize(new Dimension(400, 400));
+        kehys.setPreferredSize(new Dimension(400, 500));
         kehys.setLayout(new GridBagLayout());
         kehys.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
       
@@ -49,25 +50,27 @@ public class PeliAlkaa implements Runnable {
         
         ImageIcon goh = new ImageIcon("/home/ppnauman/goh.jpg");
         JLabel otsake = new JLabel(goh);
+        c.ipady=30;
         c.gridy = 0;
         c.gridx = 0;
         
         container.add(otsake, c);
         
-        JLabel nimiPelaaja1 = new JLabel("Player 1 name and color: ");
+        JLabel nimiPelaaja1 = new JLabel("Player 1 name & color");
         nimiPelaaja1.setHorizontalAlignment(SwingConstants.CENTER);
         nimiPelaaja1.setVerticalAlignment(SwingConstants.CENTER);
         nimiPelaaja1.setForeground(Color.LIGHT_GRAY);
         c.fill = GridBagConstraints.HORIZONTAL;
-        c.insets = new Insets(0,100,0,100);
+        c.insets = new Insets(5,110,5,110);
+        c.ipady=0;
         c.gridx=0;
         c.gridy=1;
         container.add(nimiPelaaja1,c);
         
         
         JTextField nimiKentta1 = new JTextField("");
-        nimiKentta1.setDocument(new TekstiKentanRajoitin(20));
-        Dimension tekstikentanKoko = new Dimension(250,25);
+        nimiKentta1.setDocument(new TekstiKentanRajoitin(22));
+        Dimension tekstikentanKoko = new Dimension(150,25);
         nimiKentta1.setPreferredSize(tekstikentanKoko);
         c.gridy=2;
         container.add(nimiKentta1,c);
@@ -84,17 +87,19 @@ public class PeliAlkaa implements Runnable {
         c.gridy=3;
         container.add(varikentta1, c);
         
-        JLabel nimiPelaaja2 = new JLabel("Player 2 name and color: ");
+        JLabel nimiPelaaja2 = new JLabel("Player 2 name & color");
         nimiPelaaja2.setHorizontalAlignment(SwingConstants.CENTER);
         nimiPelaaja2.setVerticalAlignment(SwingConstants.CENTER);
         nimiPelaaja2.setForeground(Color.LIGHT_GRAY);
+        c.insets=new Insets(20,110,5,110);
         c.gridy=4;
         container.add(nimiPelaaja2,c);
         
         JTextField nimiKentta2 = new JTextField("");
-        nimiKentta2.setDocument(new TekstiKentanRajoitin(20));
+        nimiKentta2.setDocument(new TekstiKentanRajoitin(22));
         nimiKentta2.setPreferredSize(tekstikentanKoko);
         c.gridy=5;
+        c.insets=new Insets(5,110,5,110);
         container.add(nimiKentta2,c);
         
         
@@ -105,7 +110,7 @@ public class PeliAlkaa implements Runnable {
         JButton pelaa = new JButton("Play");
         pelaa.setPreferredSize(new Dimension(tekstikentanKoko));
         pelaa.addActionListener(new PelaaNapinKuuntelija(kehys, nimiKentta1, nimiKentta2, varikentta1, varikentta2));
-        c.insets=new Insets(20,100,20,100);
+        c.insets=new Insets(30,110,20,110);
         c.gridy=7;
         container.add(pelaa, c);
         
