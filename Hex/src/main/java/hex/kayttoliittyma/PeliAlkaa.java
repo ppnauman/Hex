@@ -16,6 +16,7 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.WindowConstants;
+import javax.swing.text.PlainDocument;
 
 /**
  *Ohjelman käynnistyessä avautuva graafinen ikkuna, jossa pelaajat
@@ -65,6 +66,7 @@ public class PeliAlkaa implements Runnable {
         
         
         JTextField nimiKentta1 = new JTextField("");
+        nimiKentta1.setDocument(new TekstiKentanRajoitin(20));
         Dimension tekstikentanKoko = new Dimension(250,25);
         nimiKentta1.setPreferredSize(tekstikentanKoko);
         c.gridy=2;
@@ -90,6 +92,7 @@ public class PeliAlkaa implements Runnable {
         container.add(nimiPelaaja2,c);
         
         JTextField nimiKentta2 = new JTextField("");
+        nimiKentta2.setDocument(new TekstiKentanRajoitin(20));
         nimiKentta2.setPreferredSize(tekstikentanKoko);
         c.gridy=5;
         container.add(nimiKentta2,c);

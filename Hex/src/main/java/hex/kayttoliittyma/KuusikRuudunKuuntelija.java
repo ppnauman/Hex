@@ -57,6 +57,7 @@ public class KuusikRuudunKuuntelija implements MouseListener {
     @Override
     public void mouseEntered(MouseEvent me) {
         MonikRuutu tamaRuutu = (MonikRuutu)me.getSource();
+        if(tamaRuutu.haeRuudunVari() == peli.pelaaja1vari() || tamaRuutu.haeRuudunVari() == peli.pelaaja2vari()) return;
         tamaRuutu.tummennaVari();
         tamaRuutu.repaint();
     }
@@ -65,7 +66,7 @@ public class KuusikRuudunKuuntelija implements MouseListener {
     public void mouseExited(MouseEvent me) {
         
         MonikRuutu tamaRuutu = (MonikRuutu)me.getSource();
-        if(tamaRuutu.haeRuudunVari() == Color.RED) return;
+        if(tamaRuutu.haeRuudunVari() == peli.pelaaja1vari() || tamaRuutu.haeRuudunVari() == peli.pelaaja2vari()) return;
         tamaRuutu.vaalennaVari();
         tamaRuutu.repaint();
        
