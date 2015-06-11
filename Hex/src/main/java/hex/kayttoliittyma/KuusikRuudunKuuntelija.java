@@ -31,20 +31,20 @@ public class KuusikRuudunKuuntelija implements MouseListener {
     @Override
     public void mousePressed (MouseEvent me) {
         MonikRuutu tamaRuutu = (MonikRuutu)me.getSource();
-        if(peli.asetaKuusikulmio(tamaRuutu.haePaikkaIndeksi(), peli.variNytVuorossa())) {
-            tamaRuutu.asetaVari(this.peli.variNytVuorossa());
+        Color variVuorossa = peli.variNytVuorossa();
+        if(peli.asetaKuusikulmio(tamaRuutu.haePaikkaIndeksi(), variVuorossa)) {
+            tamaRuutu.asetaVari(variVuorossa);
             tamaRuutu.repaint();
             String voittaja = peli.tarkistaVoittaja();
             if ( voittaja != null) {
-                PeliPaattynyt peliPaattynyt = new PeliPaattynyt(voittaja, peli.variNytVuorossa(), this.kayttis.haeKehys());
+                PeliPaattynyt peliPaattynyt = new PeliPaattynyt(voittaja, variVuorossa, this.kayttis.haeKehys());
                 SwingUtilities.invokeLater(peliPaattynyt);
                 this.kayttis.poistaKuuntelijat();
             }
             peli.vaihdaVuoroa();
-            this.kayttis.haeInfo().setForeground(peli.variNytVuorossa());
-            this.kayttis.haeInfo().setText(peli.nimiNytVuorossa() + " – it's your move.");
+            this.kayttis.kirjoitaInfoon(peli.variNytVuorossa(), peli.nimiNytVuorossa() + " – it's your move.");
         } else {
-            this.kayttis.haeInfo().setText(peli.nimiNytVuorossa() + " – position occupied. Try again. ");
+            this.kayttis.haeInfo().setText(peli.nimiNytVuorossa() + " – position already occupied. Try again.");
         }
     }
     

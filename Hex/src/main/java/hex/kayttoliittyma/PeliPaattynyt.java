@@ -54,7 +54,7 @@ public class PeliPaattynyt implements Runnable {
         container.setBackground(Color.BLACK);
         GridBagConstraints c = new GridBagConstraints();
         
-        JLabel viesti = new JLabel(voittaja + " you've won the game!");
+        JLabel viesti = new JLabel(voittaja + " – you won the game!");
         viesti.setHorizontalAlignment(SwingConstants.CENTER);
         viesti.setVerticalAlignment(SwingConstants.CENTER);
         viesti.setForeground(vari);

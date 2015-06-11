@@ -65,6 +65,10 @@ public class Kayttoliittyma implements Runnable {
       
     }
     
+    public void kirjoitaInfoon(Color vari, String teksti) {
+        this.info.setForeground(vari);
+        this.info.setText(teksti);
+    }
     
     /*asettaa peli-ikkunan leveydeksi 80% näytön leveydestä, korkeudeksi 90% näytön korkeudesta
     ja sijoittaa peli-ikkunan keskelle näyttöä.*/

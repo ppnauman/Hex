@@ -28,7 +28,7 @@ public class PeliAlkaa implements Runnable {
     
     @Override
     public void run() {
-        kehys = new JFrame("Game of Hex ***new game***");
+        kehys = new JFrame("Game of Hex – new game");
         kehys.setPreferredSize(new Dimension(400, 500));
         kehys.setLayout(new GridBagLayout());
         kehys.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -41,11 +41,9 @@ public class PeliAlkaa implements Runnable {
     }
     
     //luo JFrame -kehyksen komponentit
-    private void luoKomponentit(Container container) {
-        
-        //taustaväri
-        container.setBackground(Color.BLACK);
-        
+    private void luoKomponentit(Container sailio) {
+    
+        asetaTaustaVari(sailio);
         GridBagConstraints c = new GridBagConstraints();
         
         ImageIcon goh = new ImageIcon("/home/ppnauman/goh.jpg");
@@ -54,7 +52,7 @@ public class PeliAlkaa implements Runnable {
         c.gridy = 0;
         c.gridx = 0;
         
-        container.add(otsake, c);
+        sailio.add(otsake, c);
         
         JLabel nimiPelaaja1 = new JLabel("Player 1 name & color");
         nimiPelaaja1.setHorizontalAlignment(SwingConstants.CENTER);
@@ -65,7 +63,7 @@ public class PeliAlkaa implements Runnable {
         c.ipady=0;
         c.gridx=0;
         c.gridy=1;
-        container.add(nimiPelaaja1,c);
+        sailio.add(nimiPelaaja1,c);
         
         
         JTextField nimiKentta1 = new JTextField("");
@@ -73,7 +71,7 @@ public class PeliAlkaa implements Runnable {
         Dimension tekstikentanKoko = new Dimension(150,25);
         nimiKentta1.setPreferredSize(tekstikentanKoko);
         c.gridy=2;
-        container.add(nimiKentta1,c);
+        sailio.add(nimiKentta1,c);
 
         String[] varit = { "Red", "Blue", "White", "Green", "Pink", "Yellow", "Cyan", "Orange" };
         JComboBox varikentta1 = new JComboBox(varit);
@@ -85,7 +83,7 @@ public class PeliAlkaa implements Runnable {
         varikentta1.removeItem("Blue");
         varikentta1.addActionListener(new VariKentanKuuntelija(varikentta2, varit));
         c.gridy=3;
-        container.add(varikentta1, c);
+        sailio.add(varikentta1, c);
         
         JLabel nimiPelaaja2 = new JLabel("Player 2 name & color");
         nimiPelaaja2.setHorizontalAlignment(SwingConstants.CENTER);
@@ -93,38 +91,39 @@ public class PeliAlkaa implements Runnable {
         nimiPelaaja2.setForeground(Color.LIGHT_GRAY);
         c.insets=new Insets(20,110,5,110);
         c.gridy=4;
-        container.add(nimiPelaaja2,c);
+        sailio.add(nimiPelaaja2,c);
         
         JTextField nimiKentta2 = new JTextField("");
         nimiKentta2.setDocument(new TekstiKentanRajoitin(22));
         nimiKentta2.setPreferredSize(tekstikentanKoko);
         c.gridy=5;
         c.insets=new Insets(5,110,5,110);
-        container.add(nimiKentta2,c);
+        sailio.add(nimiKentta2,c);
         
         
         varikentta2.addActionListener(new VariKentanKuuntelija(varikentta1, varit));
         c.gridy=6;
-        container.add(varikentta2, c);
+        sailio.add(varikentta2, c);
         
         JButton pelaa = new JButton("Play");
         pelaa.setPreferredSize(new Dimension(tekstikentanKoko));
         pelaa.addActionListener(new PelaaNapinKuuntelija(kehys, nimiKentta1, nimiKentta2, varikentta1, varikentta2));
         c.insets=new Insets(30,110,20,110);
         c.gridy=7;
-        container.add(pelaa, c);
+        sailio.add(pelaa, c);
         
         
         asetaKehyksenPaikka();
+    }
     
-        
-   
+    private void asetaTaustaVari(Container sailio) {
+        sailio.setBackground(Color.BLACK);
     }
     
     private void asetaKehyksenPaikka() {
        Dimension naytonKoko = Toolkit.getDefaultToolkit().getScreenSize();
        int x = (naytonKoko.width-400)/2;
-       int y = (naytonKoko.height-400)/2;
+       int y = (naytonKoko.height-500)/2;
        this.kehys.setLocation(x,y);
         
     }
