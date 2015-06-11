@@ -1,6 +1,6 @@
 ##Projektiin käytetty aika (hh:min)
 
-###Yhteensä: 46:30
+###Yhteensä: 55:30
 
 ###11.5.15
  2:00 gitiin tutustumista, repositorion luonti, aiheen kuvaus, tuntikirjanpito
@@ -56,8 +56,24 @@
 ###31.5.15
  1:00 PeliPaattynyt.java GridBagLayout (GUIBuilderiin en silti nöyrry..)
 
-###3.5.15
+###3.6.15
  0:30 PeliAlkaa.java ikkunan aloittelua
 
-###4.5.15
+###4.6.15
  1:00 Sekvenssiokaavion tekoa draw.io:ssa, mutta eihän siitä vielä ajoissa tullu valmista. Ensi viikolla sitten enemmän kaavioita, tää meni pitkälti töissä. 
+
+###5.6.15
+ 1:00 PeliAlkaa.java
+
+###8.6.15
+ 2:00 Tapahtumankuuntelijat alku-ja loppunäkymiin
+
+###9.6.15
+ 2:00 KäLin siistimistä ja tekstikenttien pituuden rajoittaminen
+
+###10.6.15
+ 2:00 sekvenssikaaviot
+
+###11.6.15
+ 2:00 sekvenssikaavioita, dokumentaatiota, uusi pit-raportti
+
