@@ -44,7 +44,7 @@ public class KuusikRuudunKuuntelija implements MouseListener {
             peli.vaihdaVuoroa();
             this.kayttis.kirjoitaInfoon(peli.variNytVuorossa(), peli.nimiNytVuorossa() + " – it's your move.");
         } else {
-            this.kayttis.haeInfo().setText(peli.nimiNytVuorossa() + " – position already occupied. Try again.");
+            this.kayttis.kirjoitaInfoon(peli.variNytVuorossa(), peli.nimiNytVuorossa() + " – position already occupied. Try again.");
         }
     }
     
