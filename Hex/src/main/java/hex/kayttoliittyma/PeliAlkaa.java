@@ -46,7 +46,7 @@ public class PeliAlkaa implements Runnable {
         asetaTaustaVari(sailio);
         GridBagConstraints c = new GridBagConstraints();
         
-        ImageIcon goh = new ImageIcon("/home/ppnauman/goh.jpg");
+        ImageIcon goh = new ImageIcon("goh.jpg");
         JLabel otsake = new JLabel(goh);
         c.ipady=30;
         c.gridy = 0;
