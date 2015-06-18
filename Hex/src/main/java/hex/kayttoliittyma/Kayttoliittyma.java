@@ -25,7 +25,13 @@ public class Kayttoliittyma implements Runnable {
     private Dimension naytonKoko;
     private JLabel info;
     private MouseListener ruudunKuuntelija;
-
+    
+    /**
+     * Konstruktori, jolle annetaan parametrina HexPinta -rajapinnan toteuttava
+     * logiikkaolio, jonka avulla Käyttöliittymä voi kommunikoida sovelluslogiikan kanssa.
+     * 
+     * @param peli 
+     */
     public Kayttoliittyma(HexPinta peli) {
         this.peli = peli;
         this.naytonKoko = Toolkit.getDefaultToolkit().getScreenSize();
@@ -70,7 +76,8 @@ public class Kayttoliittyma implements Runnable {
         this.info.setText(teksti);
     }
     
-    /*asettaa peli-ikkunan leveydeksi 80% näytön leveydestä, korkeudeksi 90% näytön korkeudesta
+    /*asettaa peli-ikkunan korkeudeksi 90% näytön korkeudesta, leveydeksi
+    1,3krt korkeuden verran
     ja sijoittaa peli-ikkunan keskelle näyttöä.*/
     private void asetaKehyksenPaikka (JFrame kehys) {
         int korkeus = (int)naytonKoko.height/10*9;
@@ -81,7 +88,7 @@ public class Kayttoliittyma implements Runnable {
         kehys.setPreferredSize(new Dimension(leveys,korkeus));
     }
     
-    
+    //luo pelilaudan eli sen muodostavat MonikRuutu -oliot ja lisää ne parametrina annettavaan oliosäiliöön
     private void luoMonikulmiot(Container container, int lev, int kork, int rako) {
                 
         //luodaan muodot
@@ -217,6 +224,12 @@ public class Kayttoliittyma implements Runnable {
         return new Rectangle (x, y, lev, kork);
     }
     
+    /**
+     * Poistaa tapahtumankuuntelijat kaikilta Kayttoliittyma-ikkunan komponenteilta
+     * eli 'jäädyttää' tilanteen pelilaudalla. Käytetään esim. silloin kun peli
+     * on ratkennut, eikä haluta pelaajien enää lisäävään kuusikulmioita Kayttoliittyma-
+     * ikkunan kautta.
+     */
     public void poistaKuuntelijat() {
         Component[] komp = this.kehys.getContentPane().getComponents();
         for(int i=0; i<komp.length; i++) {
@@ -224,14 +237,18 @@ public class Kayttoliittyma implements Runnable {
         }
     }
     
-    
-    //palauttaa info JLabelin
-    
+    /**
+     * Palauttaa Kayttoliittyma:n JLabel -tyyppisen infokenttäkomponentin.
+     * @return käyttöliittymän infokenttä
+     */
     public JLabel haeInfo() {
         return this.info;
     }
     
-    //palauttaa JFrame -kehysolion
+    /**
+     * Palauttaa Kayttoliittyma:n JFrame- kehyksen.
+     * @return Kayttoliittyma:n JFrame säiliö
+     */
     public JFrame haeKehys() {
         return kehys;
     }

@@ -4,8 +4,9 @@ import java.awt.Color;
 import java.util.ArrayList;
 
 /**
- * Koordinoi peliä ja toteuttaa käyttöliittymälle näkyvän rajapinnan (ns.
- * fasaadi-luokka).
+ * Koordinoi peliä ja toteuttaa käyttöliittymälle näkyvän rajapinnan HexPinta. Ns. 
+ * fasaadi-luokka, jonka ajatuksena on toteuttaa yksinkertainen käyttöliittymälle
+ * näkyvä rajapinta.
  */
 public class Peli implements HexPinta {
 
@@ -25,7 +26,7 @@ public class Peli implements HexPinta {
     }
 
     /**
-     * Vaihtaa vuoron pelaajalta toiselle.
+     * Vaihtaa vuoron nykyiseltä pelaajalta pelin toiselle pelaajalle.
      */
     @Override
     public void vaihdaVuoroa() {
@@ -46,18 +47,23 @@ public class Peli implements HexPinta {
         return this.vuorossa.haeVari();
     }
    
+    /**
+     * Palauttaa pelilaudan koon eli sen yhdellä sivustalla olevien peliruutujen
+     * lukumäärän, lautaa reunustavat apumonikulmiot mukaan lukien.
+     * @return pelilaudan sivun pituus ruutuina
+     */
     @Override
     public int laudanKoko() {
         return this.lauta.koko();
     }
 
     /**
-     * Asettaa pelilaudalle uuden, vuorossa olevan pelaajan väriä vastaavan
-     * kuusikulmion. Mikäli ruutu on jo varattu, palauttaa totuusarvon false.
-     * Jos kulmio asetettiin, palauttaa true tietona graafiselle
+     * Asettaa pelilaudalle uuden, tällä hetkellä vuorossa olevan pelaajan väriä vastaavan
+     * kuusikulmion. Mikäli ruutu on jo varattu, palauttaa totuusarvon 'false'.
+     * Jos kulmio asetettiin, palauttaa 'true' tietona graafiselle
      * käyttöliittymälle.
      *
-     * @param paikkaIndeksi - paikka pelilaudalla kokonaislukuindeksinä
+     * @param paikkaIndeksi - kuusikulmion paikka pelilaudalla kokonaislukuindeksinä
      * @param variNytVuorossa - kuusikulmiolle asetettava väri
      * 
      * @return voitiinko kuusikulmio asettaa true > kyllä false > ei
@@ -88,21 +94,43 @@ public class Peli implements HexPinta {
         return null;
     }
     
+    /**
+     * Palauttaa parametrina annetussa laudan paikassa olevan monikulmion
+     * tämänhetkisen värin.
+     * 
+     * @param paikkaIndeksi - monikulmion paikka pelilaudalla kokonaislukuindeksinä
+     * @return monikulmion väri
+     */
     @Override
     public Color monikulmionVari(int paikkaIndeksi) {
         return this.lauta.haeKulmioIndeksilla(paikkaIndeksi).haeVari();
     }
     
+    /**
+     * Palauttaa pelaaja1:n värin.
+     * 
+     * @return pelaaja1:n väri
+     */
     @Override
     public Color pelaaja1vari() {
         return this.pelaaja1.haeVari();
     }
     
+    /**
+     * Palauttaa pelaaja2:n värin.
+     * 
+     * @return pelaaja2:n väri 
+     */
     @Override
     public Color pelaaja2vari() {
         return this.pelaaja2.haeVari();
     }
     
+    /**
+     * Palauttaa kutsumishetkellä vuorossa olevan pelaajaolion nimen.
+     * 
+     * @return vuorossa olevan pelaajan nimi
+     */
     @Override
     public String nimiNytVuorossa() {
         return this.vuorossa.haeNimi();

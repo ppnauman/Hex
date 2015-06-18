@@ -19,7 +19,7 @@ import javax.swing.WindowConstants;
 import javax.swing.text.PlainDocument;
 
 /**
- *Ohjelman käynnistyessä avautuva graafinen ikkuna, jossa pelaajat
+ *Ohjelman käynnistyessä ensimmäisenä avautuva graafinen ikkuna, jossa pelaajat
  * syöttävät pelaajanimensä ja valitsevat haluamansa värin.
  */
 public class PeliAlkaa implements Runnable {

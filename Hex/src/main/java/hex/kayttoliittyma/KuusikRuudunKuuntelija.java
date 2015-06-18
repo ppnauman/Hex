@@ -13,16 +13,21 @@ import javax.swing.SwingUtilities;
 
 /**
  * Hiirenkuuntelijaluokka, joka seuraa pelilaudan kuusikulmaisissa peliruuduissa
- * tapahtuvia hiiren toimintoja. Vasenta nappulaa painettaessa ko. ruutu varataan
- * vuorossa olevalle pelaajalle. Kun hiiri on peliruudussa, ruudun värisävy tummenee
+ * tapahtuvia hiiren toimintoja. Hiiren nappulaa (vasen tai oikea) painettaessa ko. ruutu varataan
+ * vuorossa olevalle pelaajalle. Kun hiiri on vapaassa peliruudussa, ruudun värisävy tummenee
  * merkiksi osoittimen senhetkisestä sijainnista pelilaudalla.
  */
-
 public class KuusikRuudunKuuntelija implements MouseListener {
     
     private HexPinta peli;
     private Kayttoliittyma kayttis;
     
+    /**
+     * Konstruktori, jonka parametreina annetaan HexPinta -rajapinnan toteuttava logiikkaolio,
+     * jonka avulla kuuntelija kommunikoi pelilogiikan kanssa ja pelin 'peliikkuna' eli Kayttoliittyma -olio.
+     * @param peli kayttöliittymän ja pelilogiikan välinen rajapintaolio
+     * @param kayttis peli-ikkuna -olio
+     */
     public KuusikRuudunKuuntelija(HexPinta peli, Kayttoliittyma kayttis) {
         this.peli = peli;
         this.kayttis = kayttis;

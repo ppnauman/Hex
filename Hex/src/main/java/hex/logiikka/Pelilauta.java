@@ -4,8 +4,9 @@ import java.awt.Color;
 import java.util.ArrayList;
 
 /**
- * Luokka kuvaa kuusikulmioista koostuvan pelilaudan ja sillä vallitsevan
- * tilanteen. Laudan ohella luokka tuntee pelaajien värit.
+ * Luokka kuvaa monikulmioista koostuvan pelilaudan ja sillä vallitsevan
+ * tilanteen. Monikulmaisten peliruutujen ohella luokka tuntee laudalla
+ * pelaavien pelaajien värit.
  *
  */
 public class Pelilauta {
@@ -17,7 +18,8 @@ public class Pelilauta {
     /**
      * Luo uuden, Monikulmioista koostuvan pelilaudan.
      *
-     * @param laudanKoko
+     * @param laudanKoko - laudan sivun pituus ruutuina, ilman lautaa 
+     * reunustavia viisikulmioita.
      */
     public Pelilauta(int laudanKoko, Color vari1, Color vari2) {
         this.pelilauta = new Monikulmio[laudanKoko + 2][laudanKoko + 2];
@@ -26,8 +28,7 @@ public class Pelilauta {
     }
 
     /**
-     * Luo laudalle uudet monikulmiot eli alustaa uuden laudan tai resetoi
-     * olemassaolevan pelilaudan.
+     * Luo laudalle uudet Monikulmiot eli alustaa uuden laudan.
      */
     public void alustaLauta() {
         for (int i = 0; i < this.pelilauta.length; i++) {
@@ -64,10 +65,10 @@ public class Pelilauta {
     }
 
     /**
-     * Tarkistaa onko pelilaudan indeksissä sijaitseva ruutu varattu. Vapaan
-     * ruudun väri on vaalean harmaa.
+     * Tarkistaa onko pelilaudan indeksissä sijaitseva ruutu varattu. HUOM! Vapaan
+     * ruudun väri on aina Color.LIGHT_GRAY.
      *
-     * @param paikkaIndeksi
+     * @param paikkaIndeksi tarkistettavan ruudun sijainti laudalla kokonaislukuindeksinä
      * @return true = varattu, false = vapaa
      */
     public boolean onkoRuutuVapaa(int paikkaIndeksi) {
@@ -76,7 +77,7 @@ public class Pelilauta {
 
     /**
      * Varaa pelilaudan monikulmion parametrina annettavalle pelaajalle eli ts.
-     * asettaa Monikulmion väriksi annetun värin. Metodi palauttaa
+     * asettaa Monikulmion väriksi parametrina annetun värin. Metodi palauttaa
      * kokonaislukutaulukon, jossa ovat saman väristen naapuriruutujen
      * paikkaIndeksit.
      */
@@ -85,9 +86,11 @@ public class Pelilauta {
         return tutkiNaapurit(paikkaIndeksi, variNytVuorossa);
     }
 
-    /* Palauttaa SAMANVÄRISTEN naapuriruutujen indeksit ArrayList -oliossa. Koska metodia kutsutaan
-     vain kuusikulmaisten (laudan sisällä olevien) ruutujen yhteydessä,
-     on kullakin ruudulla naapureita aina kaikkiaan 6kpl.
+    /* Apumetodi palauttaa parametrina annettua paikkaIndeksiä vastavaan kuusikulmaisen
+     ruudun kanssa SAMANVÄRISTEN naapuriruutujen indeksit ArrayList -oliossa.
+     Koska metodia kutsutaan vain kuusikulmaisille (laudan sisällä olevien) ruuduille,
+     on kullakin ruudulla naapureita aina kaikkiaan 6kpl, eivätkä tutkittavat naapurit
+     sijaitse koskaan laudan ulkopuolella.
      */
     private ArrayList<Integer> tutkiNaapurit(int paikkaIndeksi, Color vari) {
         int w = this.pelilauta.length;
@@ -105,6 +108,8 @@ public class Pelilauta {
     /**
      * Palauttaa pelilaudan Monikulmion.
      *
+     * @param i Monikulmion sijainti pystysuunnassa (0..laudan korkeus-1)
+     * @param j Monikulmion sijainti vaakasuunnassa (0..laudan leveys-1)
      */
     public Monikulmio haeMonikulmio(int i, int j) {
         return this.pelilauta[i][j];
@@ -114,8 +119,10 @@ public class Pelilauta {
      * Hakee laudalta Monikulmio-olion paikkaIndeksin(=kokonaisluku)
      * perusteella, pelin koosta riippumatta.
      *
-     * @param paikkaIndeksi
-     * @return laudan Monikulmio-olio.
+     * @param paikkaIndeksi haettavan Monikulmion paikka pelilaudalla. Pelilaudan
+     * paikat on ideksoitu alkaen vasemmasta yläkulmasta (paikkaIndeksi=0) ja jatkuen
+     * vasemmalta oikealle, rivi kerrallaan.
+     * @return Monikulmio-olio.
      */
     public Monikulmio haeKulmioIndeksilla(int paikkaIndeksi) {
         int i = paikkaIndeksi / this.pelilauta.length;
@@ -123,14 +130,15 @@ public class Pelilauta {
         return this.pelilauta[i][j];
     }
     
+    //apumetodi muuntaa vaaka- ja pystysuunnissa annetun paikkatiedon indeksoiduksi kokonaislukupaikaksi. 
     private int paikkaIndeksi(int i, int j) {
         return pelilauta.length*i+j;
     }
 
     /**
-     * Palauttaa pelilaudan kaksiulotteisena taulukkona.
+     * Palauttaa pelilaudan kaksiulotteisena Monikulmio-taulukkona.
      *
-     * @return pelilauta
+     * @return pelilauta taulukkona
      */
     public Monikulmio[][] haePelilauta() {
         return this.pelilauta;

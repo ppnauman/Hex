@@ -7,12 +7,22 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.JComboBox;
 
 /**
+ * PeliAlkaa -näkymän JComboBox -värinvalintakomponenttien kuuntelija. Kuuntelijan
+ * tehtävänä on päivittää JComboBoxit siten, että pelaajilla ei voi olla sama väri,
+ * mutta muuten väri on valittavissa aina vapaasti kaikista vaihtoehdoista.
  */
 public class VariKentanKuuntelija implements ActionListener{
     
     private JComboBox toinenKentta;
     private String[] oletusVarit;
     
+    /**
+     * Konstruktori, jolle annetaan parametreina toisen pelaajan vastaava JComboBox-valikko
+     * ja värivaihtoehdot.
+     * 
+     * @param toinenKentta toisen pelaajan värivalikko
+     * @param varit valittavissa olevat värit
+     */
     public VariKentanKuuntelija(JComboBox toinenKentta, String[] varit) {
         this.toinenKentta = toinenKentta;
         this.oletusVarit = varit;

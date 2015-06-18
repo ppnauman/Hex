@@ -11,9 +11,12 @@ public abstract class Monikulmio {
     private Color vari;
     
     /**
-     * Monikulmion konstruktori, jossa 
+     * Monikulmion konstruktori, jossa asetetaan Monikulmio-olion väri ja
+     * indeksoitu paikka pelilaudalla. Monikulmioiden paikkaindeksit alkavat pelilaudan
+     * vasemmasta yläkulmasta (indeksi 0) ja jatkuu oikealta vasemmalle, rivi kerrallaan.
      *
      * @param paikkaIndeksi sijainti pelilaudalla (0..ruutujen km)
+     * @param vari monikulmion väri
      */
     public Monikulmio(int paikkaIndeksi, Color vari) {
         this.paikka = paikkaIndeksi;
@@ -40,6 +43,8 @@ public abstract class Monikulmio {
     
     /**
      * Palauttaa Monikulmion paikan pelilaudalla kokonaislukuindeksinä ilmaistuna (0..ruutujen lkm-1).
+     * Monikulmiot numeroidaan alkaen laudan vasemmasta yläkulmasta (indeksi 0) ja jatkuen
+     * vasemmalta oikealle, rivi kerrallaan.
      * 
      * @return paikka indeksinä
      */

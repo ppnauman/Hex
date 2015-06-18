@@ -6,7 +6,7 @@ import java.awt.event.ActionListener;
 
 /**
  *Tapahtumankuuntelija PeliPaattynyt -luokan 'Exit' -napille. Sulkee
- * käynnissä olevan Java virtuaalikoneen.
+ * käynnissä olevan Java -virtuaalikoneen.
  */
 public class LopetusNapinKuuntelija implements ActionListener {
     

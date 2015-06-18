@@ -3,7 +3,7 @@ package hex.logiikka;
 import java.awt.Color;
 
 /**
- * Pelin pelaajan kuvaava luokka.
+ * Pelin pelaajaa kuvaava luokka.
  */
 public class Pelaaja {
 

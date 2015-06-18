@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 /**
  * Luokka tarkkailee pelin ratkeamista eli laudan reunalta toiselle ulottuvan
- * samanväristen 6-kulmioiden ketjun muodostumista union-find tietorakenteen avulla.
+ * samanväristen kuusikulmioiden ketjun muodostumista union-find tietorakenteen avulla.
  */
 public class Tarkastaja {
 
@@ -16,8 +16,9 @@ public class Tarkastaja {
      * Konstruktori asettaa pelilaudan kunkin kuusikulmion omaan ketjuunsa,
      * joiden koko on yksi. Lisäksi pelilautaa reunustavat 'apuviisikulmiot',
      * jotka asetetaan siten, että kullakin laudan sivustalla olevat
-     * viisikulmiot kuuluvat omaan ketjuunsa. Pelilaudan kulmissa sijaitsevat
-     * viisikulmiot asetetaan vasemman/oikean laidan ketjuihin.
+     * viisikulmiot muodostavat oman ketjunsa. Pelilaudan kulmissa sijaitsevat
+     * viisikulmiot asetetaan vasemman/oikean laidan ketjuihin niiden sijainnin
+     * mukaisesti.
      */
     public Tarkastaja(int laudanKoko) {
         this.laudanKoko = laudanKoko;
@@ -52,7 +53,7 @@ public class Tarkastaja {
      * Tutkii mihin ketjuun tietty pelilaudan kuusikulmio kuuluu.
      *
      * @param monikulmio Monikulmion paikka pelilaudalla.
-     * @return ketju, johon parametrina annettu monikulmio kuuluu
+     * @return ketjun tunnus, johon parametrina annettu monikulmio kuuluu
      */
     public int loydaKetju(int monikulmio) {
 
@@ -66,8 +67,8 @@ public class Tarkastaja {
      * Yhdistää toisiinsa ne union-find rakenteen ketjut, joihin parametreina
      * annettavat pelilaudan monikulmiot kuuluvat.
      *
-     * @param monikulmio1
-     * @param monikulmio2
+     * @param monikulmio1 - monikulmion paikkaa kuvaava kokonaislukuindeksi
+     * @param monikulmio2 - monikulmion paikkaa kuvaava kokonaislukuindeksi
      */
     public void yhdistaKetjut(int monikulmio1, int monikulmio2) {
         int ketju1 = loydaKetju(monikulmio1);
@@ -86,8 +87,8 @@ public class Tarkastaja {
 
     /**
      * Yhdistää ensimmäisenä parametrina annetun monikulmion edustaman ketjun
-     * jokaiseen toisena parametrina annettujen monikulmioiden kethuihin.
-     * Lopputuloksena kaikki monikulmiot kuuluvat samaan ketjuun.
+     * jokaiseen toisena parametrina annettuun monikulmioiden ketjuun.
+     * Lopputuloksena kaikki parametreissa viitatut monikulmiot kuuluvat samaan ketjuun.
      *
      * @param monikulmio1
      * @param naapuriMonikulmiot
@@ -99,7 +100,7 @@ public class Tarkastaja {
     }
 
     /**
-     * Tarkistaa onko peli ratkennut eli kuuluvatko ylemman ja alemman tai
+     * Tarkistaa onko peli ratkennut eli kuuluvatko JOKO ylemman ja alemman TAI
      * oikean ja vasemman reunustan viisikulmiot samaan ketjuun. Jos pelaaja1 on
      * voittanut, paluuarvo on 1. Jos pelaaja2 on voittanut, paluuarvo on 2. Jos
      * peli ei ole vielä ratkennut, on paluuarvo 0.
@@ -126,7 +127,7 @@ public class Tarkastaja {
 
     /**
      * Palauttaa pelilaudalla olevien ketjujen tämänhetkiset koot testauksen
-     * kannalta havainnollisena 2D -merkkijonoesityksenä. git commai
+     * kannalta havainnollisena 2D -merkkijonoesityksenä.
      *
      * @return union-find -ketjujen koot
      */

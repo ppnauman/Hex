@@ -22,6 +22,16 @@ public class PelaaNapinKuuntelija implements ActionListener {
     private JComboBox varikentta2;
     private JFrame kehys;
     
+    /**
+     * Konstruktori, jolle annetaan partametreina ne PeliAlkaa -ikkunan komponentit joiden
+     * tietoja kuuntelija käyttää.
+     * 
+     * @param kehys
+     * @param nimiKentta1
+     * @param nimiKentta2
+     * @param varikentta1
+     * @param varikentta2 
+     */
     public PelaaNapinKuuntelija(JFrame kehys, JTextField nimiKentta1, JTextField nimiKentta2, JComboBox varikentta1, JComboBox varikentta2) {
         
         this.kehys = kehys;
@@ -39,7 +49,8 @@ public class PelaaNapinKuuntelija implements ActionListener {
         SwingUtilities.invokeLater(kayttoliittyma);
         kehys.dispose();
     }
-
+    
+    //apumetodi ottaa parametrina annetun värin merkkijonoesityksenä ja palauttaa vastaavan Color -olion.
     private Color vari(String variMerkkijono) {
         switch(variMerkkijono) {
             case "Red" :

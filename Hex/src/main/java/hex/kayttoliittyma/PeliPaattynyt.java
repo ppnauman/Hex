@@ -16,10 +16,8 @@ import javax.swing.WindowConstants;
 /**
  *Pelin ratkettua avautuva graafinen ikkuna, joka ilmoittaa pelin voittajan.
  * Pelaajan on mahdollista valita haluaako hän aloittaa uuden pelin,
- * tarkastella pelaajakohtaisia
- * tilastoja vai poistua ohjelmasta.
+ * vai poistua ohjelmasta.
  */
-
 public class PeliPaattynyt implements Runnable {
     private JFrame kehys;
     private JFrame peli;
@@ -27,6 +25,14 @@ public class PeliPaattynyt implements Runnable {
     private Color vari;
     private Kayttoliittyma kayttis;
 
+    /**
+     * Konstruktori, jolle annetaan parametreina pelin voittaneen pelaajan nimi,
+     * väri ja pelin pääikkunan (Kayttoliittyma-olion) JFrame kehys.
+     * 
+     * @param voittaja pelin voittajan nimi
+     * @param vari pelin voittajan väri
+     * @param peli peli-ikkunan komponenttikehys
+     */
     public PeliPaattynyt(String voittaja, Color vari, JFrame peli) {
         this.voittaja = voittaja;
         this.vari = vari;
@@ -94,6 +100,7 @@ public class PeliPaattynyt implements Runnable {
         container.add(lopetus, c);
     }
     
+    //ikkunan sijainti näytöllä
     private void asetaKehyksenPaikka() {
         Dimension naytonKoko = Toolkit.getDefaultToolkit().getScreenSize();
         int y = (naytonKoko.height-200)/2;

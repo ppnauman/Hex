@@ -4,21 +4,20 @@ import java.awt.Color;
 
 
 /**
- * Pelilaudan Kuusikulmion eli 'peliruudun' kuvaava aliluokka.
+ * Pelilaudan Kuusikulmion eli peliruudun kuvaava aliluokka.
  *
  */
 public class Kuusikulmio extends Monikulmio {
 
 
     /**
-     * Konstruktori luo uuden Kuusikulmion, jonka 'bounding boxin'
-     * sijainti grafiikkakontekstissa on ilmaistu x- ja y-koordinaatteina.
-     * Lisäksi kuusikulmio tietää paikkansa pelilaudalla indeksin muodossa.
-     * Yliluokan konstruktorin mukaisesti oletusväri on LIGHT_GRAY.
+     * Konstruktori luo uuden Kuusikulmion, joka tietää värinsä ja paikkansa pelilaudalla indeksin muodossa.
+     * Yliluokan konstruktorin mukaisesti kuusikulmion oletusväri on LIGHT_GRAY,
+     * mikä on vapaille peliruuduille varattu väri.
      *
-     * @param paikkaIndeksi sijainti pelilaudalla (0..ruutujen lkm-1)
-     * @param x komponentin absoluuttinen sijainti x-akselilla
-     * @param y komponentin absoluuttinen sijainti y-akselilla
+     * @param paikkaIndeksi sijainti pelilaudalla (0..ruutujen lkm-1, numerointi alkaa pelilaudan
+     * vasemmasta yläkulmasta ja etenee oikealta vasemmale, rivi kerrallaan)
+     * @param vari kuusikulmion väri
      */
     public Kuusikulmio(int paikkaIndeksi, Color vari) {
         
