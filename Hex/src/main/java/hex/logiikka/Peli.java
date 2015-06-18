@@ -66,7 +66,7 @@ public class Peli implements HexPinta {
      * @param paikkaIndeksi - kuusikulmion paikka pelilaudalla kokonaislukuindeksinä
      * @param variNytVuorossa - kuusikulmiolle asetettava väri
      * 
-     * @return voitiinko kuusikulmio asettaa true > kyllä false > ei
+     * @return voitiinko kuusikulmio asettaa, kyllä true / ei false
      */
     @Override
     public boolean asetaKuusikulmio(int paikkaIndeksi, Color variNytVuorossa) {

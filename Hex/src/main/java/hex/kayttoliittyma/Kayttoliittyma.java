@@ -71,6 +71,13 @@ public class Kayttoliittyma implements Runnable {
       
     }
     
+    /**
+     * Asettaa peli-ikkunaan, pelilaudan yläreunassa sijaitsevaan info-palkkiin parametrina
+     * annetun tekstin parametrina annetulla värillä.
+     * 
+     * @param vari tulosteen väri
+     * @param teksti tulostettava teksti
+     */
     public void kirjoitaInfoon(Color vari, String teksti) {
         this.info.setForeground(vari);
         this.info.setText(teksti);
