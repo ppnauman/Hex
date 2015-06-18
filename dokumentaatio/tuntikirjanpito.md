@@ -1,6 +1,6 @@
 ##Projektiin käytetty aika (hh:min)
 
-###Yhteensä: 55:30
+###Yhteensä: 59:00
 
 ###11.5.15
  2:00 gitiin tutustumista, repositorion luonti, aiheen kuvaus, tuntikirjanpito
@@ -76,4 +76,13 @@
 
 ###11.6.15
  2:00 sekvenssikaavioita, dokumentaatiota, uusi pit-raportti
+
+###14.6.15
+ 1:00 käyttöliittymäluokkien dokumentointia, .jar luonti
+
+###15.6.15
+ 0:30 dokumentointia
+
+###18.6.15
+ 3:00 dokumentointia, uusi pit, tarkistelua, uusi .jar, käyttöohje, tunnit ym.
 
