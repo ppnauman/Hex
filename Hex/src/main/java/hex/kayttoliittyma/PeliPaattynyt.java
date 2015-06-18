@@ -86,11 +86,6 @@ public class PeliPaattynyt implements Runnable {
         c.anchor=GridBagConstraints.PAGE_END;
         container.add(uusiPeli, c);
         
-        JButton tilasto = new JButton("ShowStats");
-        c.gridx=1;
-        c.gridy=1;
-        c.gridwidth=1;
-        container.add(tilasto, c);
         
         JButton lopetus = new JButton("Exit");
         lopetus.addActionListener(new LopetusNapinKuuntelija());
