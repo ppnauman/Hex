@@ -46,8 +46,7 @@ public class PeliAlkaa implements Runnable {
         asetaTaustaVari(sailio);
         GridBagConstraints c = new GridBagConstraints();
         
-        ImageIcon goh = new ImageIcon("goh.jpg");
-        JLabel otsake = new JLabel(goh);
+        JLabel otsake = new JLabel("Game of Hex");
         c.ipady=30;
         c.gridy = 0;
         c.gridx = 0;
