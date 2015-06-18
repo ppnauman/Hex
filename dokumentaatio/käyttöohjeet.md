@@ -16,3 +16,6 @@ Hex on kaksinpelinä pelattava strateginen lautapeli. Pelin tarkoituksena on yhd
 
 6. Game Over -ikkunassa voidaan valita halutaanko pelata uudelleen (PlayAgain) vai lopettaa pelaaminen (Exit). 
 
+HUOM! Hex on tarkoitettu pelattavaksi yleisimmillä nykyaikaisilla näytöillä,
+joiden pystysuuntainen resoluutio on vähintään 600 pikseliä. Pienemmillä
+resoluutioilla pelilauta ei välttämättä mahdu näytölle kokonaisuudesssaan.
