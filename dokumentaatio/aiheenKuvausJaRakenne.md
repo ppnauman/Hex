@@ -16,8 +16,7 @@ Peliin osallistuu kaksi pelaajaa.
 	* syötä käyttäjänimi
 	* valitse väri
 	* aseta kuusiokulmio laudalle omalla vuorolla
-	* aloita peli alusta (vaikka se olisi kesken)
-	* (tarkastele pelaajakohtaisia tilastoja)
+	* aloita uusi peli tai lopeta pelaaminen
 
 ##Järjestelmän toiminnot
 
@@ -26,10 +25,10 @@ Peliin osallistuu kaksi pelaajaa.
 	* graafinen käyttöliittymä piirtää pelilaudan
 	* valvoo sääntöjen noudattamista
 
-##Mahdollisia aiheen laajennuksia
+##Aiheen jatkokehitysmahdollisuuksia
 
 	* pelimahdollisuus tekoälyä vastaan (mahdollisesti eri vaikeustasoja)
 	* pelaajatilastot nimen perusteella (tiedostossa)
-	* mahdollisuus pelata erikokoisilla pelilaudoilla
+	* mahdollisuus pelata erikokoisilla pelilaudoilla. nyt pelilaudan kokoa ei ole 'kovakoodattu' eli olisi mahdollista valita erikokoinen lauta, mikäli käyttöliittymään tehtäisi tätä varten valikko/ComboBox ja varmistettaisi, että piirtyvä pelilauta ei ylitä näytön kokoa.
 
 
