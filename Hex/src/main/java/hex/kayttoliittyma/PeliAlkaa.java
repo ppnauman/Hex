@@ -16,7 +16,6 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.WindowConstants;
-import javax.swing.text.PlainDocument;
 
 /**
  *Ohjelman käynnistyessä ensimmäisenä avautuva graafinen ikkuna, jossa pelaajat
@@ -45,8 +44,8 @@ public class PeliAlkaa implements Runnable {
     
         asetaTaustaVari(sailio);
         GridBagConstraints c = new GridBagConstraints();
-        
-        JLabel otsake = new JLabel("Game of Hex");
+        ImageIcon ikoni= new ImageIcon("/home/perttu/Työpöytä/goh.jpg");
+        JLabel otsake = new JLabel(ikoni);
         c.ipady=30;
         c.gridy = 0;
         c.gridx = 0;
